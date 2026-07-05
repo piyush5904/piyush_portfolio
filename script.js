@@ -49,3 +49,5 @@ window.addEventListener('scroll', () => {
     ? 'rgba(159, 202, 230, 0.38)'
     : 'rgba(159, 202, 230, 0.18)';
 });
+// ===== Auto-update copyright year =====
+document.getElementById('year').textContent = new Date().getFullYear();
