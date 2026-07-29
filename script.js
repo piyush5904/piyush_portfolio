@@ -49,5 +49,47 @@ window.addEventListener('scroll', () => {
     ? 'rgba(159, 202, 230, 0.38)'
     : 'rgba(159, 202, 230, 0.18)';
 });
+
 // ===== Auto-update copyright year =====
 document.getElementById('year').textContent = new Date().getFullYear();
+
+// ===== Stat count-up animation =====
+const statEls = document.querySelectorAll('.stat-num');
+
+const animateCount = (el) => {
+  const raw = el.textContent.trim();
+  const match = raw.match(/^([^\d]*)(\d+(\.\d+)?)(.*)$/); // prefix, number, decimals, suffix
+  if (!match) { el.classList.add('counted'); return; } // e.g. "AIR 823" won't match cleanly, skip animation for it
+
+  const prefix = match[1];
+  const target = parseFloat(match[2]);
+  const isDecimal = raw.includes('.');
+  const suffix = match[4];
+  const duration = 1000;
+  const start = performance.now();
+
+  const step = (now) => {
+    const progress = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const current = target * eased;
+    el.textContent = prefix + (isDecimal ? current.toFixed(2) : Math.round(current)) + suffix;
+    if (progress < 1) {
+      requestAnimationFrame(step);
+    } else {
+      el.classList.add('counted');
+      setTimeout(() => el.classList.remove('counted'), 500);
+    }
+  };
+  requestAnimationFrame(step);
+};
+
+const statObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      animateCount(entry.target);
+      statObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.5 });
+
+statEls.forEach(el => statObserver.observe(el));
