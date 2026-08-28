@@ -1,173 +1,580 @@
-// ===== Mobile nav toggle =====
-const navToggle = document.getElementById('navToggle');
-const navLinks = document.getElementById('navLinks');
+```javascript
+/* =========================================
+   PIYUSH PURU PORTFOLIO V2
+========================================= */
 
-if (navToggle && navLinks) {
-  navToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('open');
+
+/* =========================================
+   MOBILE NAVIGATION
+========================================= */
+
+const menuBtn = document.getElementById("menuBtn");
+const navigation = document.getElementById("navigation");
+
+
+if (menuBtn && navigation) {
+
+  menuBtn.addEventListener("click", () => {
+
+    const isOpen =
+      navigation.classList.toggle("open");
+
+    menuBtn.setAttribute(
+      "aria-expanded",
+      String(isOpen)
+    );
+
   });
 
-  navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => navLinks.classList.remove('open'));
-  });
+
+  document
+    .querySelectorAll(".navigation a")
+    .forEach((link) => {
+
+      link.addEventListener("click", () => {
+
+        navigation.classList.remove("open");
+
+        menuBtn.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
+      });
+
+    });
+
 }
 
-// ===== Active nav link on scroll =====
-const sections = document.querySelectorAll('main section[id]');
-const navAnchors = document.querySelectorAll('.nav-links a');
 
-const setActiveLink = () => {
-  let current = '';
+/* =========================================
+   DARK / LIGHT MODE
+========================================= */
 
-  sections.forEach(section => {
-    const rect = section.getBoundingClientRect();
-    if (rect.top <= 140 && rect.bottom >= 140) {
-      current = section.getAttribute('id');
-    }
-  });
+const themeBtn =
+  document.getElementById("themeBtn");
 
-  navAnchors.forEach(anchor => {
-    anchor.classList.toggle('active', anchor.getAttribute('href') === `#${current}`);
-  });
-};
 
-window.addEventListener('scroll', setActiveLink);
-setActiveLink();
+const savedTheme =
+  localStorage.getItem("portfolio-theme");
 
-// ===== Scroll reveal =====
-const revealEls = document.querySelectorAll('.reveal');
 
-const revealObserver = new IntersectionObserver((entries, observer) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('in');
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.14 });
+if (savedTheme === "light") {
 
-revealEls.forEach(el => revealObserver.observe(el));
+  document.body.classList.add("light");
 
-// ===== Header border on scroll =====
-const header = document.querySelector('header');
+  themeBtn.textContent = "☾";
 
-window.addEventListener('scroll', () => {
-  if (!header) return;
-  header.style.borderBottomColor =
-    window.scrollY > 20
-      ? 'rgba(159, 202, 230, 0.38)'
-      : 'rgba(159, 202, 230, 0.18)';
-});
-
-// ===== Footer year =====
-const yearEl = document.getElementById('year');
-if (yearEl) {
-  yearEl.textContent = new Date().getFullYear();
 }
 
-// ===== Stat count-up animation =====
-const statEls = document.querySelectorAll('.stat-num');
 
-const animateCount = (el) => {
-  const raw = el.textContent.trim();
+if (themeBtn) {
 
-  // Only animate pure numeric values
-  if (isNaN(Number(raw))) return;
+  themeBtn.addEventListener("click", () => {
 
-  const target = Number(raw);
-  const isDecimal = raw.includes('.');
-  const duration = 1100;
-  const start = performance.now();
+    document.body.classList.toggle("light");
 
-  const step = (now) => {
-    const progress = Math.min((now - start) / duration, 1);
-    const eased = 1 - Math.pow(1 - progress, 3);
-    const current = target * eased;
 
-    el.textContent = isDecimal ? current.toFixed(2) : Math.round(current);
+    const isLight =
+      document.body.classList.contains("light");
 
-    if (progress < 1) {
-      requestAnimationFrame(step);
-    } else {
-      el.textContent = raw;
-      el.classList.add('counted');
-      setTimeout(() => el.classList.remove('counted'), 600);
-    }
-  };
 
-  requestAnimationFrame(step);
-};
+    themeBtn.textContent =
+      isLight ? "☾" : "☼";
 
-const statObserver = new IntersectionObserver((entries, observer) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      animateCount(entry.target);
-      observer.unobserve(entry.target);
-    }
+
+    localStorage.setItem(
+      "portfolio-theme",
+      isLight ? "light" : "dark"
+    );
+
   });
-}, { threshold: 0.5 });
 
-statEls.forEach(el => statObserver.observe(el));
+}
 
-// ===== PDF modal viewer =====
-const pdfModal = document.getElementById('pdfModal');
-const pdfBackdrop = document.getElementById('pdfBackdrop');
-const pdfCloseBtn = document.getElementById('pdfCloseBtn');
-const pdfFrame = document.getElementById('pdfFrame');
-const pdfModalTitle = document.getElementById('pdfModalTitle');
-const pdfOpenNewTab = document.getElementById('pdfOpenNewTab');
-const viewWritingBtns = document.querySelectorAll('.view-writing-btn');
 
-const openPdfModal = (title, pdfUrl) => {
-  if (!pdfModal || !pdfFrame || !pdfModalTitle || !pdfOpenNewTab) return;
+/* =========================================
+   TYPING EFFECT
+========================================= */
 
-  if (!pdfUrl || pdfUrl.includes('YOUR_PUBLIC_')) {
-    alert('Please add a valid public PDF URL in script.js or index.html before using the View button.');
+const typingText =
+  document.getElementById("typingText");
+
+
+const roles = [
+
+  "Full-Stack Developer",
+
+  "MERN Stack Developer",
+
+  "Java Developer",
+
+  "Machine Learning Enthusiast",
+
+  "Researcher"
+
+];
+
+
+let roleIndex = 0;
+
+let characterIndex = 0;
+
+let deleting = false;
+
+
+function typeRole() {
+
+  if (!typingText) {
     return;
   }
 
-  pdfModalTitle.textContent = title;
 
-  // For direct PDF URLs
-  const previewUrl = pdfUrl.includes('#')
-    ? pdfUrl
-    : `${pdfUrl}#toolbar=0&navpanes=0&scrollbar=1`;
+  const currentRole =
+    roles[roleIndex];
 
-  pdfFrame.src = previewUrl;
-  pdfOpenNewTab.href = pdfUrl;
 
-  pdfModal.classList.add('open');
-  pdfModal.setAttribute('aria-hidden', 'false');
-  document.body.classList.add('modal-open');
-};
+  if (!deleting) {
 
-const closePdfModal = () => {
-  if (!pdfModal || !pdfFrame) return;
+    characterIndex++;
 
-  pdfModal.classList.remove('open');
-  pdfModal.setAttribute('aria-hidden', 'true');
-  pdfFrame.src = '';
-  document.body.classList.remove('modal-open');
-};
+    typingText.textContent =
+      currentRole.substring(
+        0,
+        characterIndex
+      );
 
-viewWritingBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    const title = btn.dataset.title || 'Document Preview';
-    const pdfUrl = btn.dataset.pdf || '';
-    openPdfModal(title, pdfUrl);
-  });
-});
 
-if (pdfCloseBtn) {
-  pdfCloseBtn.addEventListener('click', closePdfModal);
-}
+    if (
+      characterIndex ===
+      currentRole.length
+    ) {
 
-if (pdfBackdrop) {
-  pdfBackdrop.addEventListener('click', closePdfModal);
-}
+      deleting = true;
 
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && pdfModal && pdfModal.classList.contains('open')) {
-    closePdfModal();
+      setTimeout(
+        typeRole,
+        1600
+      );
+
+      return;
+
+    }
+
+  } else {
+
+    characterIndex--;
+
+    typingText.textContent =
+      currentRole.substring(
+        0,
+        characterIndex
+      );
+
+
+    if (characterIndex === 0) {
+
+      deleting = false;
+
+      roleIndex =
+        (roleIndex + 1) %
+        roles.length;
+
+    }
+
   }
+
+
+  setTimeout(
+    typeRole,
+    deleting ? 45 : 80
+  );
+
+}
+
+
+typeRole();
+
+
+/* =========================================
+   SCROLL REVEAL
+========================================= */
+
+const revealObserver =
+  new IntersectionObserver(
+
+    (entries) => {
+
+      entries.forEach((entry) => {
+
+        if (
+          entry.isIntersecting
+        ) {
+
+          entry.target.classList.add(
+            "visible"
+          );
+
+          revealObserver.unobserve(
+            entry.target
+          );
+
+        }
+
+      });
+
+    },
+
+    {
+      threshold: 0.12
+    }
+
+  );
+
+
+document
+  .querySelectorAll(".reveal")
+  .forEach((element) => {
+
+    revealObserver.observe(element);
+
+  });
+
+
+/* =========================================
+   SKILL FILTERS
+========================================= */
+
+const filters =
+  document.querySelectorAll(".filter");
+
+
+const skillCards =
+  document.querySelectorAll(".skill-card");
+
+
+filters.forEach((filter) => {
+
+  filter.addEventListener(
+    "click",
+    () => {
+
+      filters.forEach((button) => {
+
+        button.classList.remove(
+          "active"
+        );
+
+      });
+
+
+      filter.classList.add(
+        "active"
+      );
+
+
+      const selected =
+        filter.dataset.filter;
+
+
+      skillCards.forEach((card) => {
+
+        const category =
+          card.dataset.category;
+
+
+        if (
+          selected === "all" ||
+          category === selected
+        ) {
+
+          card.classList.remove(
+            "hidden"
+          );
+
+        } else {
+
+          card.classList.add(
+            "hidden"
+          );
+
+        }
+
+      });
+
+    }
+  );
+
 });
+
+
+/* =========================================
+   GITHUB API
+========================================= */
+
+async function loadGitHubStats() {
+
+  const repoCount =
+    document.getElementById("repoCount");
+
+  const followerCount =
+    document.getElementById(
+      "followerCount"
+    );
+
+  const followingCount =
+    document.getElementById(
+      "followingCount"
+    );
+
+
+  try {
+
+    const response =
+      await fetch(
+        "https://api.github.com/users/piyush5904"
+      );
+
+
+    if (!response.ok) {
+
+      throw new Error(
+        "GitHub request failed"
+      );
+
+    }
+
+
+    const data =
+      await response.json();
+
+
+    repoCount.textContent =
+      data.public_repos ?? "—";
+
+
+    followerCount.textContent =
+      data.followers ?? "—";
+
+
+    followingCount.textContent =
+      data.following ?? "—";
+
+
+  } catch (error) {
+
+    console.warn(
+      "GitHub stats unavailable:",
+      error
+    );
+
+
+    repoCount.textContent = "—";
+
+    followerCount.textContent = "—";
+
+    followingCount.textContent = "—";
+
+  }
+
+}
+
+
+loadGitHubStats();
+
+
+/* =========================================
+   CURRENT YEAR
+========================================= */
+
+const year =
+  document.getElementById("year");
+
+
+if (year) {
+
+  year.textContent =
+    new Date().getFullYear();
+
+}
+
+
+/* =========================================
+   ACTIVE NAVIGATION
+========================================= */
+
+const sections =
+  document.querySelectorAll(
+    "section[id]"
+  );
+
+
+const navItems =
+  document.querySelectorAll(
+    ".navigation a"
+  );
+
+
+const sectionObserver =
+  new IntersectionObserver(
+
+    (entries) => {
+
+      entries.forEach((entry) => {
+
+        if (
+          entry.isIntersecting
+        ) {
+
+          navItems.forEach((link) => {
+
+            link.classList.remove(
+              "active"
+            );
+
+          });
+
+
+          const activeLink =
+            document.querySelector(
+              `.navigation a[href="#${entry.target.id}"]`
+            );
+
+
+          if (activeLink) {
+
+            activeLink.classList.add(
+              "active"
+            );
+
+          }
+
+        }
+
+      });
+
+    },
+
+    {
+      threshold: 0.45
+    }
+
+  );
+
+
+sections.forEach((section) => {
+
+  sectionObserver.observe(section);
+
+});
+
+
+/* =========================================
+   SMOOTH SCROLL
+========================================= */
+
+document
+  .querySelectorAll(
+    'a[href^="#"]'
+  )
+  .forEach((anchor) => {
+
+    anchor.addEventListener(
+      "click",
+      (event) => {
+
+        const id =
+          anchor.getAttribute("href");
+
+
+        const target =
+          document.querySelector(id);
+
+
+        if (!target) {
+          return;
+        }
+
+
+        event.preventDefault();
+
+
+        target.scrollIntoView({
+
+          behavior: "smooth",
+
+          block: "start"
+
+        });
+
+      }
+    );
+
+  });
+
+
+/* =========================================
+   MOUSE PARALLAX FOR HERO CARD
+========================================= */
+
+const heroCard =
+  document.querySelector(
+    ".hero-card"
+  );
+
+
+if (
+  heroCard &&
+  window.matchMedia(
+    "(pointer: fine)"
+  ).matches
+) {
+
+  heroCard.addEventListener(
+    "mousemove",
+    (event) => {
+
+      const rect =
+        heroCard.getBoundingClientRect();
+
+
+      const x =
+        event.clientX -
+        rect.left;
+
+
+      const y =
+        event.clientY -
+        rect.top;
+
+
+      const rotateX =
+        ((y / rect.height) - 0.5) * -5;
+
+
+      const rotateY =
+        ((x / rect.width) - 0.5) * 5;
+
+
+      heroCard.style.transform =
+        `perspective(900px)
+         rotateX(${rotateX}deg)
+         rotateY(${rotateY}deg)
+         translateY(-4px)`;
+
+    }
+  );
+
+
+  heroCard.addEventListener(
+    "mouseleave",
+    () => {
+
+      heroCard.style.transform =
+        "";
+
+    }
+  );
+
+}
+```
