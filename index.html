@@ -1,1468 +1,334 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
-  <meta
-    name="description"
-    content="Piyush Puru — B.Tech CSE student, Full-Stack Developer, Java Developer and Machine Learning enthusiast."
-  >
-
-  <meta name="theme-color" content="#070b12">
-
-  <title>Piyush Puru | Full-Stack Developer</title>
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
-    rel="stylesheet"
-  >
-
-  <!-- IMPORTANT: CSS file is in same folder -->
-  <link rel="stylesheet" href="./style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Piyush Puru — Computer Science Engineer</title>
+<meta name="description" content="Piyush Puru — B.Tech CSE student at VIT-AP University. Full-stack (MERN) developer, machine learning practitioner, and hackathon builder.">
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-  <!-- Background -->
-  <div class="grid-background"></div>
-  <div class="glow glow-1"></div>
-  <div class="glow glow-2"></div>
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="logo-brand">
+      <svg class="logo-mark" width="34" height="34" viewBox="0 0 46 46" xmlns="http://www.w3.org/2000/svg">
+        <rect x="9" y="9" width="28" height="28" rx="2" fill="none" stroke="var(--accent)" stroke-width="1.5"/>
+        <line x1="14" y1="9" x2="14" y2="3" stroke="var(--cyan)" stroke-width="1.5"/>
+        <line x1="23" y1="9" x2="23" y2="3" stroke="var(--cyan)" stroke-width="1.5"/>
+        <line x1="32" y1="9" x2="32" y2="3" stroke="var(--cyan)" stroke-width="1.5"/>
+        <line x1="14" y1="37" x2="14" y2="43" stroke="var(--cyan)" stroke-width="1.5"/>
+        <line x1="23" y1="37" x2="23" y2="43" stroke="var(--cyan)" stroke-width="1.5"/>
+        <line x1="32" y1="37" x2="32" y2="43" stroke="var(--cyan)" stroke-width="1.5"/>
+        <line x1="9" y1="14" x2="3" y2="14" stroke="var(--cyan)" stroke-width="1.5"/>
+        <line x1="9" y1="32" x2="3" y2="32" stroke="var(--cyan)" stroke-width="1.5"/>
+        <line x1="37" y1="14" x2="43" y2="14" stroke="var(--cyan)" stroke-width="1.5"/>
+        <line x1="37" y1="32" x2="43" y2="32" stroke="var(--cyan)" stroke-width="1.5"/>
+        <text x="23" y="27" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" fill="var(--ink)" font-weight="600">PP</text>
+      </svg>
+      <span class="logo-text">PIYUSH<span class="accent-dot">.</span>PURU</span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#research">Research</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+  </div>
+</header>
 
-  <!-- ================= HEADER ================= -->
+<main id="top">
 
-  <header class="header" id="header">
-
-    <div class="container nav-container">
-
-      <a href="#home" class="logo">
-        <span>&lt;</span>PP<span>/&gt;</span>
-      </a>
-
-      <nav class="nav" id="nav">
-
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#research">Research</a>
-        <a href="#contact">Contact</a>
-
-      </nav>
-
-      <div class="nav-buttons">
-
-        <button
-          class="theme-button"
-          id="themeButton"
-          aria-label="Toggle theme"
-          type="button"
-        >
-          ☀
-        </button>
-
-        <button
-          class="menu-button"
-          id="menuButton"
-          aria-label="Open navigation"
-          aria-expanded="false"
-          type="button"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-
-      </div>
-
-    </div>
-
-  </header>
-
-
-  <!-- ================= MAIN ================= -->
-
-  <main>
-
-    <!-- ================= HERO ================= -->
-
-    <section class="hero" id="home">
-
-      <div class="container hero-container">
-
-        <div class="hero-content reveal">
-
-          <div class="availability">
-            <span class="availability-dot"></span>
-            Open to opportunities
-          </div>
-
-          <p class="hero-label">
-            B.TECH CSE · VIT-AP UNIVERSITY
-          </p>
-
-          <h1>
-            Piyush
-            <span>Puru.</span>
-          </h1>
-
-          <div class="hero-role">
-            <span id="typingText">Full-Stack Developer</span>
-            <span class="cursor">|</span>
-          </div>
-
-          <p class="hero-description">
-            Final-year Computer Science & Engineering student at
-            <strong>VIT-AP University</strong> with a
-            <strong>9.13 CGPA</strong>. I build full-stack applications,
-            explore machine learning, and work on research-driven
-            software systems.
-          </p>
-
-          <div class="hero-actions">
-
-            <a href="#projects" class="button primary-button">
-              View My Work
-              <span>↗</span>
-            </a>
-
-            <a
-              href="./PIYUSH_PURU_RESUME.pdf"
-              class="button secondary-button"
-              download
-            >
-              Download Resume
-              <span>↓</span>
-            </a>
-
-          </div>
-
-          <div class="hero-links">
-
-            <a
-              href="https://github.com/piyush5904"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              GitHub ↗
-            </a>
-
-            <a
-              href="https://linkedin.com/in/piyush-puru-b284b6294"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              LinkedIn ↗
-            </a>
-
-            <a href="mailto:piyushpuru123@gmail.com">
-              Email ↗
-            </a>
-
-          </div>
-
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">SHEET 01 / 06 — PROFILE</p>
+        <h1>Piyush Puru<br><span class="accent">builds</span> full-stack &amp; ML systems.</h1>
+        <p class="role">B.Tech CSE, VIT-AP University · Class of 2027</p>
+        <p class="desc">Final-year Computer Science student (CGPA 9.13) working across Java, the MERN stack, and machine learning. I've co-authored two research papers and shipped platforms through national hackathons, including Smart India Hackathon 2025.</p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary">View Projects →</a>
+          <a href="PIYUSH_PURU_RESUME.pdf" class="btn" id="resumeBtn" download>Download Resume</a>
+          <a href="mailto:piyushpuru123@gmail.com" class="btn">Email Me</a>
         </div>
-
-
-        <!-- Developer Terminal -->
-
-        <div class="terminal-wrapper reveal">
-
-          <div class="terminal">
-
-            <div class="terminal-top">
-
-              <div class="terminal-dots">
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-
-              <span class="terminal-title">
-                piyush.js
-              </span>
-
-              <span class="terminal-version">
-                v2026
-              </span>
-
-            </div>
-
-            <div class="terminal-body">
-
-              <div>
-                <span class="code-purple">const</span>
-                <span class="code-white"> developer </span>
-                <span class="code-white">=</span>
-                <span class="code-yellow"> {</span>
-              </div>
-
-              <div class="code-indent">
-                <span class="code-blue">name:</span>
-                <span class="code-green">
-                  "Piyush Puru"
-                </span>,
-              </div>
-
-              <div class="code-indent">
-                <span class="code-blue">degree:</span>
-                <span class="code-green">
-                  "B.Tech CSE"
-                </span>,
-              </div>
-
-              <div class="code-indent">
-                <span class="code-blue">university:</span>
-                <span class="code-green">
-                  "VIT-AP"
-                </span>,
-              </div>
-
-              <div class="code-indent">
-                <span class="code-blue">cgpa:</span>
-                <span class="code-orange">
-                  9.13
-                </span>,
-              </div>
-
-              <div class="code-indent">
-                <span class="code-blue">stack:</span>
-                <span class="code-green">
-                  "MERN"
-                </span>,
-              </div>
-
-              <div class="code-indent">
-                <span class="code-blue">languages:</span>
-                <span class="code-green">
-                  ["Java", "Python", "JS"]
-                </span>,
-              </div>
-
-              <div class="code-indent">
-                <span class="code-blue">focus:</span>
-                <span class="code-green">
-                  "AI + Full Stack"
-                </span>
-              </div>
-
-              <div>
-                <span class="code-yellow">}</span>;
-              </div>
-
-            </div>
-
-          </div>
-
-
-          <div class="hero-stats">
-
-            <div class="hero-stat">
-              <strong>9.13</strong>
-              <span>CGPA</span>
-            </div>
-
-            <div class="hero-stat">
-              <strong>6</strong>
-              <span>PROJECTS</span>
-            </div>
-
-            <div class="hero-stat">
-              <strong>2</strong>
-              <span>RESEARCH PAPERS</span>
-            </div>
-
-            <div class="hero-stat">
-              <strong>823</strong>
-              <span>ANMC AIR</span>
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <div class="scroll-hint">
-        <span>SCROLL</span>
-        <div></div>
-      </div>
-
-    </section>
-
-
-    <!-- ================= ABOUT ================= -->
-
-    <section class="section" id="about">
-
-      <div class="container">
-
-        <div class="section-number">
-          01 / ABOUT
-        </div>
-
-        <div class="about-grid">
-
-          <div class="section-heading reveal">
-
-            <p class="eyebrow">
-              WHO I AM
-            </p>
-
-            <h2>
-              Building with
-              <span>curiosity.</span>
-            </h2>
-
-          </div>
-
-
-          <div class="about-text reveal">
-
-            <p>
-              I'm a <strong>final-year B.Tech Computer Science
-              and Engineering student</strong> at VIT-AP University,
-              currently maintaining a <strong>9.13 CGPA</strong>.
-            </p>
-
-            <p>
-              My experience covers
-              <strong>Java, Python, JavaScript, MERN Stack,
-              Machine Learning and Full-stack Development</strong>.
-              I enjoy solving problems by combining strong
-              computer science fundamentals with practical software.
-            </p>
-
-            <p>
-              I've built projects through academic work and
-              hackathons, including a medical document RAG platform,
-              crop-yield prediction platform and MERN applications.
-            </p>
-
-            <p>
-              Alongside development, I have
-              <strong>co-authored two research papers</strong>
-              in image compression and symptom-based classification.
-            </p>
-
-            <div class="about-info">
-
-              <div>
-                <span>University</span>
-                <strong>VIT-AP University</strong>
-              </div>
-
-              <div>
-                <span>Degree</span>
-                <strong>B.Tech CSE</strong>
-              </div>
-
-              <div>
-                <span>Graduation</span>
-                <strong>2027</strong>
-              </div>
-
-              <div>
-                <span>CGPA</span>
-                <strong>9.13</strong>
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- ================= SKILLS ================= -->
-
-    <section class="section skills-section" id="skills">
-
-      <div class="container">
-
-        <div class="section-number">
-          02 / SKILLS
-        </div>
-
-        <div class="section-heading reveal">
-
-          <p class="eyebrow">
-            TECHNOLOGY
-          </p>
-
-          <h2>
-            My technical
-            <span>toolkit.</span>
-          </h2>
-
-        </div>
-
-
-        <div class="skill-filters reveal">
-
-          <button
-            class="filter-button active"
-            data-filter="all"
-            type="button"
-          >
-            ALL
-          </button>
-
-          <button
-            class="filter-button"
-            data-filter="languages"
-            type="button"
-          >
-            LANGUAGES
-          </button>
-
-          <button
-            class="filter-button"
-            data-filter="web"
-            type="button"
-          >
-            WEB
-          </button>
-
-          <button
-            class="filter-button"
-            data-filter="database"
-            type="button"
-          >
-            DATABASE
-          </button>
-
-          <button
-            class="filter-button"
-            data-filter="core"
-            type="button"
-          >
-            CORE CS
-          </button>
-
-          <button
-            class="filter-button"
-            data-filter="tools"
-            type="button"
-          >
-            TOOLS
-          </button>
-
-        </div>
-
-
-        <div class="skills-grid">
-
-
-          <article
-            class="skill-card reveal"
-            data-category="languages"
-          >
-
-            <div class="skill-card-top">
-              <span>01</span>
-              <span>LANG</span>
-            </div>
-
-            <h3>Languages</h3>
-
-            <div class="skill-tags">
-              <span>Java</span>
-              <span>Python</span>
-              <span>JavaScript</span>
-              <span>SQL</span>
-            </div>
-
-          </article>
-
-
-          <article
-            class="skill-card reveal"
-            data-category="web"
-          >
-
-            <div class="skill-card-top">
-              <span>02</span>
-              <span>WEB</span>
-            </div>
-
-            <h3>Web Development</h3>
-
-            <div class="skill-tags">
-              <span>HTML</span>
-              <span>CSS</span>
-              <span>JavaScript</span>
-              <span>MERN Stack</span>
-            </div>
-
-          </article>
-
-
-          <article
-            class="skill-card reveal"
-            data-category="database"
-          >
-
-            <div class="skill-card-top">
-              <span>03</span>
-              <span>DATA</span>
-            </div>
-
-            <h3>Databases</h3>
-
-            <div class="skill-tags">
-              <span>MySQL</span>
-              <span>MongoDB</span>
-            </div>
-
-          </article>
-
-
-          <article
-            class="skill-card reveal"
-            data-category="tools"
-          >
-
-            <div class="skill-card-top">
-              <span>04</span>
-              <span>TOOLS</span>
-            </div>
-
-            <h3>Developer Tools</h3>
-
-            <div class="skill-tags">
-              <span>Git</span>
-              <span>GitHub</span>
-              <span>VS Code</span>
-            </div>
-
-          </article>
-
-
-          <article
-            class="skill-card reveal"
-            data-category="core"
-          >
-
-            <div class="skill-card-top">
-              <span>05</span>
-              <span>CORE</span>
-            </div>
-
-            <h3>Core CS</h3>
-
-            <div class="skill-tags">
-              <span>Data Structures</span>
-              <span>OOPs</span>
-              <span>DBMS</span>
-              <span>Operating Systems</span>
-              <span>Computer Networks</span>
-            </div>
-
-          </article>
-
-
-          <article
-            class="skill-card reveal"
-            data-category="tools"
-          >
-
-            <div class="skill-card-top">
-              <span>06</span>
-              <span>SOFT</span>
-            </div>
-
-            <h3>Soft Skills</h3>
-
-            <div class="skill-tags">
-              <span>Communication</span>
-              <span>Leadership</span>
-              <span>Teamwork</span>
-              <span>Adaptability</span>
-              <span>Critical Thinking</span>
-              <span>Logical Reasoning</span>
-            </div>
-
-          </article>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- ================= PROJECTS ================= -->
-
-    <section class="section" id="projects">
-
-      <div class="container">
-
-        <div class="section-number">
-          03 / PROJECTS
-        </div>
-
-        <div class="section-heading reveal">
-
-          <p class="eyebrow">
-            SELECTED WORK
-          </p>
-
-          <h2>
-            Things I've
-            <span>built.</span>
-          </h2>
-
-        </div>
-
-
-        <div class="projects-grid">
-
-
-          <!-- 01 MEDRAG -->
-
-          <article class="project-card featured reveal">
-
-            <div class="project-number">
-              01
-            </div>
-
-            <div class="project-date">
-              AUG 2026
-            </div>
-
-            <div class="project-content">
-
-              <div class="project-icon">
-                ✦
-              </div>
-
-              <p class="project-category">
-                AI / FULL-STACK
-              </p>
-
-              <h3>
-                MedRAG
-              </h3>
-
-              <h4>
-                Medical Document Intelligence
-              </h4>
-
-              <p>
-                Built a medical document question-answering
-                platform using Retrieval-Augmented Generation
-                (RAG) to provide grounded answers from uploaded
-                PDF documents.
-              </p>
-
-              <p>
-                Developed the full-stack pipeline using React,
-                Spring Boot, LangChain4j, Ollama and Qdrant for
-                document processing, embeddings, vector retrieval
-                and context-aware answer generation.
-              </p>
-
-              <div class="project-tags">
-                <span>React</span>
-                <span>Spring Boot</span>
-                <span>LangChain4j</span>
-                <span>Ollama</span>
-                <span>Qdrant</span>
-                <span>RAG</span>
-              </div>
-
-            </div>
-
-            <div class="project-bottom">
-              <span>MEDICAL AI</span>
-              <span>↗</span>
-            </div>
-
-          </article>
-
-
-          <!-- 02 SIH -->
-
-          <article class="project-card reveal">
-
-            <div class="project-number">
-              02
-            </div>
-
-            <div class="project-date">
-              NOV 2025
-            </div>
-
-            <div class="project-content">
-
-              <div class="project-icon">
-                ◈
-              </div>
-
-              <p class="project-category">
-                HACKATHON / ML
-              </p>
-
-              <h3>
-                Crop Yield Prediction
-              </h3>
-
-              <h4>
-                Smart India Hackathon 2025
-              </h4>
-
-              <p>
-                Built a MERN-based crop yield prediction platform
-                integrating Weather and Language Translation APIs
-                with machine learning models trained on 10K+
-                records available online.
-              </p>
-
-              <div class="project-tags">
-                <span>MERN</span>
-                <span>Machine Learning</span>
-                <span>Weather API</span>
-                <span>Translation API</span>
-              </div>
-
-            </div>
-
-            <div class="project-bottom">
-              <span>SIH 2025</span>
-              <span>↗</span>
-            </div>
-
-          </article>
-
-
-          <!-- 03 RECIPE -->
-
-          <article class="project-card reveal">
-
-            <div class="project-number">
-              03
-            </div>
-
-            <div class="project-date">
-              JUL 2025
-            </div>
-
-            <div class="project-content">
-
-              <div class="project-icon">
-                ◉
-              </div>
-
-              <p class="project-category">
-                MERN / WEB
-              </p>
-
-              <h3>
-                Recipe Maker
-              </h3>
-
-              <h4>
-                MERN Recipe Platform
-              </h4>
-
-              <p>
-                Developed a MERN recipe platform with advanced
-                search, category filtering and MongoDB-backed
-                recipe management supporting 30+ recipes.
-              </p>
-
-              <div class="project-tags">
-                <span>MongoDB</span>
-                <span>Express</span>
-                <span>React</span>
-                <span>Node.js</span>
-              </div>
-
-            </div>
-
-            <div class="project-bottom">
-              <span>WEB APP</span>
-              <span>↗</span>
-            </div>
-
-          </article>
-
-
-          <!-- 04 PORTFOLIO -->
-
-          <article class="project-card reveal">
-
-            <div class="project-number">
-              04
-            </div>
-
-            <div class="project-date">
-              FEB 2025
-            </div>
-
-            <div class="project-content">
-
-              <div class="project-icon">
-                ◇
-              </div>
-
-              <p class="project-category">
-                FRONT-END
-              </p>
-
-              <h3>
-                Portfolio Website
-              </h3>
-
-              <h4>
-                Personal Developer Portfolio
-              </h4>
-
-              <p>
-                Designed a portfolio showcasing projects,
-                certifications and achievements and deployed
-                it on GitHub.
-              </p>
-
-              <div class="project-tags">
-                <span>HTML</span>
-                <span>CSS</span>
-                <span>JavaScript</span>
-                <span>GitHub</span>
-              </div>
-
-            </div>
-
-            <div class="project-bottom">
-              <span>PERSONAL</span>
-              <span>↗</span>
-            </div>
-
-          </article>
-
-
-          <!-- 05 JOB-X-PERT -->
-
-          <article class="project-card reveal">
-
-            <div class="project-number">
-              05
-            </div>
-
-            <div class="project-date">
-              APR 2024
-            </div>
-
-            <div class="project-content">
-
-              <div class="project-icon">
-                +
-              </div>
-
-              <p class="project-category">
-                HACKATHON
-              </p>
-
-              <h3>
-                JOB-X-PERT
-              </h3>
-
-              <h4>
-                Job Discovery Platform
-              </h4>
-
-              <p>
-                Created a job discovery platform during the
-                FRAMEX Hackathon 2023.
-              </p>
-
-              <div class="project-tags">
-                <span>Hackathon</span>
-                <span>Job Discovery</span>
-              </div>
-
-            </div>
-
-            <div class="project-bottom">
-              <span>FRAMEX</span>
-              <span>↗</span>
-            </div>
-
-          </article>
-
-
-          <!-- 06 BEYOND CODE -->
-
-          <article class="project-card reveal">
-
-            <div class="project-number">
-              06
-            </div>
-
-            <div class="project-date">
-              NOV 2024
-            </div>
-
-            <div class="project-content">
-
-              <div class="project-icon">
-                //
-              </div>
-
-              <p class="project-category">
-                JAVA / OOP
-              </p>
-
-              <h3>
-                Beyond the Code
-              </h3>
-
-              <h4>
-                Java Applications
-              </h4>
-
-              <p>
-                Developed Java-based To-Do List and Number
-                Guessing Game applications demonstrating
-                object-oriented programming, user interaction
-                and core Java concepts.
-              </p>
-
-              <div class="project-tags">
-                <span>Java</span>
-                <span>OOP</span>
-              </div>
-
-            </div>
-
-            <div class="project-bottom">
-              <span>JAVA</span>
-              <span>↗</span>
-            </div>
-
-          </article>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- ================= GITHUB ================= -->
-
-    <section class="github-section">
-
-      <div class="container">
-
-        <div class="github-card reveal">
-
-          <div class="github-text">
-
-            <p class="eyebrow">
-              OPEN SOURCE
-            </p>
-
-            <h2>
-              Code lives on
-              <span>GitHub.</span>
-            </h2>
-
-            <p>
-              Explore my repositories, projects and
-              experiments.
-            </p>
-
-            <a
-              href="https://github.com/piyush5904"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="button primary-button"
-            >
-              Visit GitHub ↗
-            </a>
-
-          </div>
-
-
-          <div class="github-stats">
-
-            <div>
-              <strong id="repoCount">—</strong>
-              <span>PUBLIC REPOS</span>
-            </div>
-
-            <div>
-              <strong id="followerCount">—</strong>
-              <span>FOLLOWERS</span>
-            </div>
-
-            <div>
-              <strong id="followingCount">—</strong>
-              <span>FOLLOWING</span>
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- ================= RESEARCH ================= -->
-
-    <section class="section" id="research">
-
-      <div class="container">
-
-        <div class="section-number">
-          04 / RESEARCH
-        </div>
-
-        <div class="section-heading reveal">
-
-          <p class="eyebrow">
-            ACADEMIC WORK
-          </p>
-
-          <h2>
-            Research beyond
-            <span>the code.</span>
-          </h2>
-
-        </div>
-
-
-        <div class="research-grid">
-
-
-          <article class="research-card reveal">
-
-            <span class="research-number">
-              01
-            </span>
-
-            <p class="research-label">
-              RESEARCH PAPER
-            </p>
-
-            <h3>
-              Adaptive Wavelet-Based Image Compression
-              using Bayesian Thresholding and
-              Run-Length Encoding
-            </h3>
-
-            <p>
-              Led and co-authored research paper on
-              image compression techniques.
-            </p>
-
-          </article>
-
-
-          <article class="research-card reveal">
-
-            <span class="research-number">
-              02
-            </span>
-
-            <p class="research-label">
-              RESEARCH PAPER
-            </p>
-
-            <h3>
-              Symptom-Based Classification and
-              Diagnosis of COVID-19
-            </h3>
-
-            <p>
-              Co-authored research paper on
-              symptom-based classification and diagnosis.
-            </p>
-
-          </article>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- ================= EDUCATION ================= -->
-
-    <section class="section education-section">
-
-      <div class="container">
-
-        <div class="education-grid">
-
-
+        <div class="hero-stats">
           <div>
-
-            <div class="section-number">
-              05 / EDUCATION
-            </div>
-
-            <div class="timeline reveal">
-
-              <div class="timeline-item">
-
-                <span class="timeline-date">
-                  2023 — 2027
-                </span>
-
-                <h3>
-                  VIT-AP University
-                </h3>
-
-                <p>
-                  Bachelor of Technology in
-                  Computer Science and Engineering
-                </p>
-
-                <strong>
-                  CGPA: 9.13
-                </strong>
-
-              </div>
-
-
-              <div class="timeline-item">
-
-                <span class="timeline-date">
-                  2011 — 2022
-                </span>
-
-                <h3>
-                  Amity International School
-                </h3>
-
-                <p>
-                  Grade II — XII · Graduated
-                </p>
-
-              </div>
-
-            </div>
-
+            <div class="stat-num">9.13</div>
+            <div class="stat-label">CGPA</div>
           </div>
-
-
-          <!-- CERTIFICATIONS -->
-
-          <div id="certifications">
-
-            <div class="section-number">
-              06 / CREDENTIALS
-            </div>
-
-            <div class="certifications-list reveal">
-
-
-              <div class="certification">
-
-                <span>01</span>
-
-                <div>
-
-                  <h3>
-                    Oracle Agentic AI Foundations
-                  </h3>
-
-                  <p>
-                    Certificate ID:
-                    330463030AAI26OFA
-                  </p>
-
-                </div>
-
-              </div>
-
-
-              <div class="certification">
-
-                <span>02</span>
-
-                <div>
-
-                  <h3>
-                    MERN Full Stack Certification
-                  </h3>
-
-                  <p>
-                    Certificate ID:
-                    9DVMQT2Z
-                  </p>
-
-                </div>
-
-              </div>
-
-
-              <div class="certification">
-
-                <span>03</span>
-
-                <div>
-
-                  <h3>
-                    Amazon Web Services Academy
-                  </h3>
-
-                  <p>
-                    AWS Certifications
-                  </p>
-
-                </div>
-
-              </div>
-
-
-              <div class="certification">
-
-                <span>04</span>
-
-                <div>
-
-                  <h3>
-                    TCS iON AI Foundation
-                  </h3>
-
-                  <p>
-                    Certificate ID:
-                    279243-33132225-1016
-                  </p>
-
-                </div>
-
-              </div>
-
-
-              <div class="certification">
-
-                <span>05</span>
-
-                <div>
-
-                  <h3>
-                    ANMC Final Round
-                  </h3>
-
-                  <p>
-                    AIR 823
-                  </p>
-
-                </div>
-
-              </div>
-
-            </div>
-
+          <div>
+            <div class="stat-num">5</div>
+            <div class="stat-label">Shipped Projects</div>
           </div>
-
+          <div>
+            <div class="stat-num">2</div>
+            <div class="stat-label">Research Papers</div>
+          </div>
+          <div>
+            <div class="stat-num">AIR 823</div>
+            <div class="stat-label">ANMC Final Round</div>
+          </div>
         </div>
-
       </div>
 
-    </section>
+      <div class="schematic panel">
+        <span class="sheet-tag">FIG. 01 — STACK</span>
+        <div class="corner-br"></div><div class="corner-bl"></div>
+        <svg viewBox="0 0 360 340" xmlns="http://www.w3.org/2000/svg">
+          <path class="schem-line delay1" d="M80 60 L80 110" />
+          <path class="schem-line delay2" d="M140 130 L200 130" />
+          <path class="schem-line delay2" d="M80 150 L80 200" />
+          <path class="schem-line delay3" d="M260 150 L260 280" />
+          <path class="schem-line delay4" d="M80 240 L80 280" />
 
+          <rect class="schem-node n1" x="20" y="20" width="120" height="40" rx="2"/>
+          <text class="schem-label n1" x="30" y="45">JAVA / OOP</text>
 
-    <!-- ================= LANGUAGES / HOBBIES ================= -->
+          <rect class="schem-node n2" x="20" y="110" width="120" height="40" rx="2"/>
+          <text class="schem-label n2" x="30" y="135">MERN STACK</text>
 
-    <section class="section extras-section">
+          <rect class="schem-node n3" x="200" y="110" width="120" height="40" rx="2"/>
+          <text class="schem-label n3" x="210" y="135">ML MODELS</text>
 
-      <div class="container">
+          <rect class="schem-node n4" x="20" y="200" width="120" height="40" rx="2"/>
+          <text class="schem-label n4" x="30" y="225">APIs / DATA</text>
 
-        <div class="extras-grid">
-
-
-          <div class="extra-card reveal">
-
-            <p class="eyebrow">
-              LANGUAGES
-            </p>
-
-            <h3>
-              English
-            </h3>
-
-            <h3>
-              Hindi
-            </h3>
-
-            <h3>
-              Spanish
-              <small>(Basic)</small>
-            </h3>
-
-          </div>
-
-
-          <div class="extra-card reveal">
-
-            <p class="eyebrow">
-              BEYOND CODE
-            </p>
-
-            <h3>
-              Playing Sports
-            </h3>
-
-            <h3>
-              Reading Books
-            </h3>
-
-            <h3>
-              Writing
-            </h3>
-
-          </div>
-
-
-          <div class="extra-card reveal">
-
-            <p class="eyebrow">
-              MINDSET
-            </p>
-
-            <h3>
-              Leadership
-            </h3>
-
-            <h3>
-              Teamwork
-            </h3>
-
-            <h3>
-              Critical Thinking
-            </h3>
-
-          </div>
-
-        </div>
-
+          <rect class="schem-node n5" x="60" y="280" width="210" height="40" rx="2"/>
+          <text class="schem-label n5" x="70" y="305">DEPLOYED PRODUCT</text>
+        </svg>
       </div>
-
-    </section>
-
-
-    <!-- ================= CONTACT ================= -->
-
-    <section class="contact-section" id="contact">
-
-      <div class="container">
-
-        <div class="contact-content reveal">
-
-          <p class="eyebrow">
-            07 / CONTACT
-          </p>
-
-          <h2>
-            Let's build something
-            <span>great.</span>
-          </h2>
-
-          <p class="contact-description">
-            Open to internships, collaborations,
-            hackathons, research and software development
-            opportunities.
-          </p>
-
-
-          <div class="contact-buttons">
-
-            <a
-              href="mailto:piyushpuru123@gmail.com"
-              class="button primary-button"
-            >
-              piyushpuru123@gmail.com ↗
-            </a>
-
-            <a
-              href="tel:+917042911848"
-              class="button secondary-button"
-            >
-              +91 7042911848
-            </a>
-
-          </div>
-
-
-          <div class="contact-socials">
-
-            <a
-              href="https://github.com/piyush5904"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              GitHub
-            </a>
-
-            <a
-              href="https://linkedin.com/in/piyush-puru-b284b6294"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              LinkedIn
-            </a>
-
-            <a
-              href="./PIYUSH_PURU_RESUME.pdf"
-              download
-            >
-              Resume
-            </a>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-  </main>
-
-
-  <!-- ================= FOOTER ================= -->
-
-  <footer>
-
-    <div class="container footer-content">
-
-      <span>
-        © <span id="year"></span> Piyush Puru
-      </span>
-
-      <span>
-        Built with HTML · CSS · JavaScript
-      </span>
-
     </div>
+  </section>
 
-  </footer>
+  <!-- ============ ABOUT ============ -->
+  <section id="about">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2>About</h2>
+        <span class="section-num">SHEET 02 / 06</span>
+      </div>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p>I'm a final-year <strong>Computer Science &amp; Engineering</strong> student at VIT-AP University, building software across the full stack — from Java-based systems to production MERN applications to machine learning pipelines.</p>
+          <p>My work spans <strong>national hackathons</strong> (Smart India Hackathon, FRAMEX), <strong>academic research</strong> — co-authoring papers on COVID-19 symptom classification and wavelet-based image compression — and independent full-stack builds like a recipe platform with authentication and search.</p>
+          <p>I care about writing code that's structured well underneath, not just working on the surface — data structures, OOP, and clean architecture guide how I build.</p>
+        </div>
+        <div class="info-table reveal panel" style="padding:28px 32px;">
+          <div class="corner-br"></div><div class="corner-bl"></div>
+          <div class="info-row"><span>Education</span><span>VIT-AP University</span></div>
+          <div class="info-row"><span>Degree</span><span>B.Tech, CSE (2023–2027)</span></div>
+          <div class="info-row"><span>CGPA</span><span>9.13</span></div>
+          <div class="info-row"><span>Location</span><span>Andhra Pradesh, India</span></div>
+          <div class="info-row"><span>Languages</span><span>English, Hindi, Spanish (Basic)</span></div>
+          <div class="info-row"><span>Focus</span><span>Full-Stack · ML</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- ============ SKILLS ============ -->
+  <section id="skills">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2>Skills</h2>
+        <span class="section-num">SHEET 03 / 06</span>
+      </div>
+      <div class="skills-grid reveal">
+        <div class="skill-cell">
+          <div class="skill-cat">Languages</div>
+          <div class="skill-items">
+            <span class="skill-chip">Java</span>
+            <span class="skill-chip">Python</span>
+            <span class="skill-chip">JavaScript</span>
+            <span class="skill-chip">SQL</span>
+          </div>
+        </div>
+        <div class="skill-cell">
+          <div class="skill-cat">Web / MERN</div>
+          <div class="skill-items">
+            <span class="skill-chip">HTML</span>
+            <span class="skill-chip">CSS</span>
+            <span class="skill-chip">React</span>
+            <span class="skill-chip">Node / Express</span>
+          </div>
+        </div>
+        <div class="skill-cell">
+          <div class="skill-cat">Databases</div>
+          <div class="skill-items">
+            <span class="skill-chip">MySQL</span>
+            <span class="skill-chip">MongoDB</span>
+          </div>
+        </div>
+        <div class="skill-cell">
+          <div class="skill-cat">Tools</div>
+          <div class="skill-items">
+            <span class="skill-chip">Git</span>
+            <span class="skill-chip">GitHub</span>
+            <span class="skill-chip">VS Code</span>
+          </div>
+        </div>
+        <div class="skill-cell" style="grid-column: span 4;">
+          <div class="skill-cat">Core CS</div>
+          <div class="skill-items">
+            <span class="skill-chip">Data Structures</span>
+            <span class="skill-chip">OOP</span>
+            <span class="skill-chip">DBMS</span>
+            <span class="skill-chip">Operating Systems</span>
+            <span class="skill-chip">Computer Networks</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <!-- IMPORTANT: JS file is in same folder -->
-  <script src="./script.js"></script>
+  <!-- ============ PROJECTS ============ -->
+  <section id="projects">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2>Projects</h2>
+        <span class="section-num">SHEET 04 / 06</span>
+      </div>
+      <div class="projects-list reveal">
 
+        <div class="project-card">
+          <div class="project-fig">FIG.01</div>
+          <div>
+            <div class="project-title">Smart India Hackathon — Crop Yield Prediction</div>
+            <p class="project-desc">MERN-based platform integrating Weather and Language Translation APIs with machine learning models trained on 10K+ records to generate localized crop yield predictions for farmers.</p>
+            <div class="project-tags">
+              <span class="tag">MERN</span><span class="tag">Machine Learning</span><span class="tag">APIs</span>
+            </div>
+          </div>
+          <div class="project-date">Nov 2025</div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-fig">FIG.02</div>
+          <div>
+            <div class="project-title">Recipe Maker</div>
+            <p class="project-desc">Full MERN recipe platform with advanced search, category filtering, and MongoDB-backed recipe management supporting 30+ recipes.</p>
+            <div class="project-tags">
+              <span class="tag">MongoDB</span><span class="tag">Express</span><span class="tag">React</span><span class="tag">Node</span>
+            </div>
+          </div>
+          <div class="project-date">Jul 2025</div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-fig">FIG.03</div>
+          <div>
+            <div class="project-title">JOB-X-PERT</div>
+            <p class="project-desc">Job discovery platform built during the FRAMEX Hackathon 2023, matching listings to candidate profiles.</p>
+            <div class="project-tags">
+              <span class="tag">Hackathon</span><span class="tag">Full-Stack</span>
+            </div>
+          </div>
+          <div class="project-date">Apr 2024</div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-fig">FIG.04</div>
+          <div>
+            <div class="project-title">Beyond the Code</div>
+            <p class="project-desc">Java-based To-Do List and Number Guessing Game applications, demonstrating OOP, user interaction, and core Java concepts.</p>
+            <div class="project-tags">
+              <span class="tag">Java</span><span class="tag">OOP</span>
+            </div>
+          </div>
+          <div class="project-date">Nov 2024</div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-fig">FIG.05</div>
+          <div>
+            <div class="project-title">This Portfolio</div>
+            <p class="project-desc">Designed and deployed a personal portfolio showcasing projects, certifications, and achievements — the page you're on now.</p>
+            <div class="project-tags">
+              <span class="tag">HTML/CSS/JS</span><span class="tag">GitHub Pages</span>
+            </div>
+          </div>
+          <div class="project-date">Feb 2025</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RESEARCH + CERTS ============ -->
+  <section id="research">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2>Research &amp; Credentials</h2>
+        <span class="section-num">SHEET 05 / 06</span>
+      </div>
+      <div class="split-grid reveal">
+        <div class="split-col">
+          <h3>Research Papers</h3>
+          <div class="doc-item">
+            <div class="doc-title">Adaptive Wavelet-Based Image Compression Using Bayesian Thresholding and Run-Length Encoding</div>
+            <div class="doc-meta">Co-authored research paper</div>
+          </div>
+          <div class="doc-item">
+            <div class="doc-title">Symptom-Based Classification and Diagnosis of COVID-19</div>
+            <div class="doc-meta">Co-authored research paper</div>
+          </div>
+        </div>
+        <div class="split-col">
+          <h3>Certifications</h3>
+          <div class="doc-item">
+            <div class="doc-title"><a href="https://www.linkedin.com/in/piyush-puru-b284b6294/details/certifications/" target="_blank" rel="noopener">MERN Full Stack Certification</a></div>
+            <div class="doc-meta">Credential ID: 9DVMQT2Z</div>
+          </div>
+          <div class="doc-item">
+            <div class="doc-title"><a href="https://drive.google.com/file/d/1PzRUS75XR8VDKI-eDH_9mnJlKT-O98hB/view?usp=sharing" target="_blank" rel="noopener">Amazon Web Services Academy (AWS) Certifications</a></div>
+            <div class="doc-meta">AWS Academy</div>
+          </div>
+          <div class="doc-item">
+            <div class="doc-title"><a href="https://drive.google.com/file/d/1Law-0XEWiD0wrZcEPjnTJzCvXi4jlvJX/view?usp=sharing" target="_blank" rel="noopener">TCS iON AI Foundation Certification</a></div>
+            <div class="doc-meta">ID: 279243-33132225-1016</div>
+          </div>
+          <div class="doc-item">
+            <div class="doc-title"><a href="https://www.linkedin.com/in/piyush-puru-b284b6294/details/certifications/" target="_blank" rel="noopener">ANMC Final Round</a></div>
+            <div class="doc-meta">AIR 823</div>
+          </div>
+          <div class="doc-item">
+            <div class="doc-title"><a href="https://piyush5904.github.io/piyush_portfolio/" target="_blank" rel="noopener">Portfolio</a></div>
+            <div class="doc-meta">Live site</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="contact-panel panel">
+        <div class="corner-br"></div><div class="corner-bl"></div>
+        <p class="eyebrow" style="justify-content:center;">SHEET 06 / 06 — CONTACT</p>
+        <h2>Let's build something.</h2>
+        <p>Open to internships, collaborations, and hackathon teams. Reach out — I usually reply within a day.</p>
+        <div class="contact-links">
+          <a class="btn btn-primary" href="mailto:piyushpuru123@gmail.com">piyushpuru123@gmail.com</a>
+          <a class="btn" href="https://github.com/piyush5904" target="_blank" rel="noopener">GitHub ↗</a>
+          <a class="btn" href="https://linkedin.com/in/piyush-puru-b284b6294" target="_blank" rel="noopener">LinkedIn ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-row">
+    <span>© <span id="year"></span> PIYUSH PURU — REV. 02</span>
+    <span>BUILT WITH HTML / CSS / JS</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
