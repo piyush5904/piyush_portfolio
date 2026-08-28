@@ -1,41 +1,44 @@
-```javascript
-/* =========================================
-   PIYUSH PURU PORTFOLIO V2
-========================================= */
+/* =========================================================
+   PIYUSH PURU PORTFOLIO
+   Complete JavaScript
+========================================================= */
 
 
-/* =========================================
-   MOBILE NAVIGATION
-========================================= */
+/* =========================================================
+   MOBILE MENU
+========================================================= */
 
-const menuBtn = document.getElementById("menuBtn");
-const navigation = document.getElementById("navigation");
+const menuButton =
+  document.getElementById("menuButton");
+
+const nav =
+  document.getElementById("nav");
 
 
-if (menuBtn && navigation) {
+if (menuButton && nav) {
 
-  menuBtn.addEventListener("click", () => {
+  menuButton.addEventListener("click", () => {
 
-    const isOpen =
-      navigation.classList.toggle("open");
+    const opened =
+      nav.classList.toggle("open");
 
-    menuBtn.setAttribute(
+    menuButton.setAttribute(
       "aria-expanded",
-      String(isOpen)
+      opened ? "true" : "false"
     );
 
   });
 
 
   document
-    .querySelectorAll(".navigation a")
+    .querySelectorAll(".nav a")
     .forEach((link) => {
 
       link.addEventListener("click", () => {
 
-        navigation.classList.remove("open");
+        nav.classList.remove("open");
 
-        menuBtn.setAttribute(
+        menuButton.setAttribute(
           "aria-expanded",
           "false"
         );
@@ -47,45 +50,51 @@ if (menuBtn && navigation) {
 }
 
 
-/* =========================================
-   DARK / LIGHT MODE
-========================================= */
+/* =========================================================
+   THEME SWITCHER
+========================================================= */
 
-const themeBtn =
-  document.getElementById("themeBtn");
+const themeButton =
+  document.getElementById("themeButton");
 
 
 const savedTheme =
-  localStorage.getItem("portfolio-theme");
+  localStorage.getItem(
+    "piyush-portfolio-theme"
+  );
 
 
 if (savedTheme === "light") {
 
   document.body.classList.add("light");
 
-  themeBtn.textContent = "☾";
+  if (themeButton) {
+    themeButton.textContent = "☾";
+  }
 
 }
 
 
-if (themeBtn) {
+if (themeButton) {
 
-  themeBtn.addEventListener("click", () => {
+  themeButton.addEventListener("click", () => {
 
     document.body.classList.toggle("light");
 
 
-    const isLight =
+    const lightMode =
       document.body.classList.contains("light");
 
 
-    themeBtn.textContent =
-      isLight ? "☾" : "☼";
+    themeButton.textContent =
+      lightMode ? "☾" : "☀";
 
 
     localStorage.setItem(
-      "portfolio-theme",
-      isLight ? "light" : "dark"
+      "piyush-portfolio-theme",
+      lightMode
+        ? "light"
+        : "dark"
     );
 
   });
@@ -93,9 +102,9 @@ if (themeBtn) {
 }
 
 
-/* =========================================
-   TYPING EFFECT
-========================================= */
+/* =========================================================
+   TYPING ANIMATION
+========================================================= */
 
 const typingText =
   document.getElementById("typingText");
@@ -138,6 +147,7 @@ function typeRole() {
 
     characterIndex++;
 
+
     typingText.textContent =
       currentRole.substring(
         0,
@@ -146,7 +156,7 @@ function typeRole() {
 
 
     if (
-      characterIndex ===
+      characterIndex >=
       currentRole.length
     ) {
 
@@ -165,6 +175,7 @@ function typeRole() {
 
     characterIndex--;
 
+
     typingText.textContent =
       currentRole.substring(
         0,
@@ -172,7 +183,9 @@ function typeRole() {
       );
 
 
-    if (characterIndex === 0) {
+    if (characterIndex <= 0) {
+
+      characterIndex = 0;
 
       deleting = false;
 
@@ -196,126 +209,145 @@ function typeRole() {
 typeRole();
 
 
-/* =========================================
+/* =========================================================
    SCROLL REVEAL
-========================================= */
+========================================================= */
 
-const revealObserver =
-  new IntersectionObserver(
-
-    (entries) => {
-
-      entries.forEach((entry) => {
-
-        if (
-          entry.isIntersecting
-        ) {
-
-          entry.target.classList.add(
-            "visible"
-          );
-
-          revealObserver.unobserve(
-            entry.target
-          );
-
-        }
-
-      });
-
-    },
-
-    {
-      threshold: 0.12
-    }
-
+const revealElements =
+  document.querySelectorAll(
+    ".reveal"
   );
 
 
-document
-  .querySelectorAll(".reveal")
-  .forEach((element) => {
+if ("IntersectionObserver" in window) {
+
+  const revealObserver =
+    new IntersectionObserver(
+
+      (entries) => {
+
+        entries.forEach((entry) => {
+
+          if (entry.isIntersecting) {
+
+            entry.target.classList.add(
+              "visible"
+            );
+
+            revealObserver.unobserve(
+              entry.target
+            );
+
+          }
+
+        });
+
+      },
+
+      {
+        threshold: 0.12
+      }
+
+    );
+
+
+  revealElements.forEach((element) => {
 
     revealObserver.observe(element);
 
   });
 
+} else {
 
-/* =========================================
-   SKILL FILTERS
-========================================= */
+  revealElements.forEach((element) => {
 
-const filters =
-  document.querySelectorAll(".filter");
+    element.classList.add(
+      "visible"
+    );
+
+  });
+
+}
+
+
+/* =========================================================
+   SKILL FILTER
+========================================================= */
+
+const filterButtons =
+  document.querySelectorAll(
+    ".filter-button"
+  );
 
 
 const skillCards =
-  document.querySelectorAll(".skill-card");
+  document.querySelectorAll(
+    ".skill-card"
+  );
 
 
-filters.forEach((filter) => {
+filterButtons.forEach((button) => {
 
-  filter.addEventListener(
-    "click",
-    () => {
+  button.addEventListener("click", () => {
 
-      filters.forEach((button) => {
+    filterButtons.forEach((item) => {
 
-        button.classList.remove(
-          "active"
-        );
-
-      });
-
-
-      filter.classList.add(
+      item.classList.remove(
         "active"
       );
 
-
-      const selected =
-        filter.dataset.filter;
+    });
 
 
-      skillCards.forEach((card) => {
+    button.classList.add(
+      "active"
+    );
 
-        const category =
-          card.dataset.category;
+
+    const selectedCategory =
+      button.dataset.filter;
 
 
-        if (
-          selected === "all" ||
-          category === selected
-        ) {
+    skillCards.forEach((card) => {
 
-          card.classList.remove(
-            "hidden"
-          );
+      const category =
+        card.dataset.category;
 
-        } else {
 
-          card.classList.add(
-            "hidden"
-          );
+      if (
+        selectedCategory === "all" ||
+        category === selectedCategory
+      ) {
 
-        }
+        card.classList.remove(
+          "hidden"
+        );
 
-      });
+      } else {
 
-    }
-  );
+        card.classList.add(
+          "hidden"
+        );
+
+      }
+
+    });
+
+  });
 
 });
 
 
-/* =========================================
-   GITHUB API
-========================================= */
+/* =========================================================
+   GITHUB STATS
+========================================================= */
 
 async function loadGitHubStats() {
 
   const repoCount =
-    document.getElementById("repoCount");
+    document.getElementById(
+      "repoCount"
+    );
 
   const followerCount =
     document.getElementById(
@@ -328,18 +360,35 @@ async function loadGitHubStats() {
     );
 
 
+  if (
+    !repoCount ||
+    !followerCount ||
+    !followingCount
+  ) {
+
+    return;
+
+  }
+
+
   try {
 
     const response =
       await fetch(
-        "https://api.github.com/users/piyush5904"
+        "https://api.github.com/users/piyush5904",
+        {
+          headers: {
+            "Accept":
+              "application/vnd.github+json"
+          }
+        }
       );
 
 
     if (!response.ok) {
 
       throw new Error(
-        "GitHub request failed"
+        "GitHub API request failed"
       );
 
     }
@@ -364,7 +413,7 @@ async function loadGitHubStats() {
   } catch (error) {
 
     console.warn(
-      "GitHub stats unavailable:",
+      "Unable to load GitHub statistics.",
       error
     );
 
@@ -383,50 +432,55 @@ async function loadGitHubStats() {
 loadGitHubStats();
 
 
-/* =========================================
-   CURRENT YEAR
-========================================= */
+/* =========================================================
+   FOOTER YEAR
+========================================================= */
 
-const year =
+const yearElement =
   document.getElementById("year");
 
 
-if (year) {
+if (yearElement) {
 
-  year.textContent =
+  yearElement.textContent =
     new Date().getFullYear();
 
 }
 
 
-/* =========================================
+/* =========================================================
    ACTIVE NAVIGATION
-========================================= */
+========================================================= */
 
-const sections =
+const pageSections =
   document.querySelectorAll(
-    "section[id]"
+    "main section[id]"
   );
 
 
-const navItems =
+const navigationLinks =
   document.querySelectorAll(
-    ".navigation a"
+    ".nav a"
   );
 
 
-const sectionObserver =
-  new IntersectionObserver(
+if (
+  "IntersectionObserver" in window
+) {
 
-    (entries) => {
+  const sectionObserver =
+    new IntersectionObserver(
 
-      entries.forEach((entry) => {
+      (entries) => {
 
-        if (
-          entry.isIntersecting
-        ) {
+        entries.forEach((entry) => {
 
-          navItems.forEach((link) => {
+          if (!entry.isIntersecting) {
+            return;
+          }
+
+
+          navigationLinks.forEach((link) => {
 
             link.classList.remove(
               "active"
@@ -435,64 +489,78 @@ const sectionObserver =
           });
 
 
-          const activeLink =
+          const matchingLink =
             document.querySelector(
-              `.navigation a[href="#${entry.target.id}"]`
+              `.nav a[href="#${entry.target.id}"]`
             );
 
 
-          if (activeLink) {
+          if (matchingLink) {
 
-            activeLink.classList.add(
+            matchingLink.classList.add(
               "active"
             );
 
           }
 
-        }
+        });
 
-      });
+      },
 
-    },
+      {
+        threshold: 0.35
+      }
 
-    {
-      threshold: 0.45
-    }
-
-  );
+    );
 
 
-sections.forEach((section) => {
+  pageSections.forEach((section) => {
 
-  sectionObserver.observe(section);
+    sectionObserver.observe(section);
 
-});
+  });
+
+}
 
 
-/* =========================================
+/* =========================================================
    SMOOTH SCROLL
-========================================= */
+========================================================= */
 
 document
   .querySelectorAll(
     'a[href^="#"]'
   )
-  .forEach((anchor) => {
+  .forEach((link) => {
 
-    anchor.addEventListener(
+    link.addEventListener(
       "click",
       (event) => {
 
-        const id =
-          anchor.getAttribute("href");
+        const targetId =
+          link.getAttribute("href");
+
+
+        if (
+          !targetId ||
+          targetId === "#"
+        ) {
+
+          return;
+
+        }
 
 
         const target =
-          document.querySelector(id);
+          document.querySelector(
+            targetId
+          );
 
 
         if (!target) {
+
           return;
+
         }
 
 
@@ -513,50 +581,54 @@ document
   });
 
 
-/* =========================================
-   MOUSE PARALLAX FOR HERO CARD
-========================================= */
+/* =========================================================
+   HERO TERMINAL PARALLAX
+========================================================= */
 
-const heroCard =
+const terminal =
   document.querySelector(
-    ".hero-card"
+    ".terminal-wrapper"
+  );
+
+
+const finePointer =
+  window.matchMedia(
+    "(pointer: fine)"
   );
 
 
 if (
-  heroCard &&
-  window.matchMedia(
-    "(pointer: fine)"
-  ).matches
+  terminal &&
+  finePointer.matches
 ) {
 
-  heroCard.addEventListener(
+  terminal.addEventListener(
     "mousemove",
     (event) => {
 
-      const rect =
-        heroCard.getBoundingClientRect();
+      const rectangle =
+        terminal.getBoundingClientRect();
 
 
       const x =
         event.clientX -
-        rect.left;
+        rectangle.left;
 
 
       const y =
         event.clientY -
-        rect.top;
-
-
-      const rotateX =
-        ((y / rect.height) - 0.5) * -5;
+        rectangle.top;
 
 
       const rotateY =
-        ((x / rect.width) - 0.5) * 5;
+        ((x / rectangle.width) - 0.5) * 4;
 
 
-      heroCard.style.transform =
+      const rotateX =
+        ((y / rectangle.height) - 0.5) * -4;
+
+
+      terminal.style.transform =
         `perspective(900px)
          rotateX(${rotateX}deg)
          rotateY(${rotateY}deg)
@@ -566,15 +638,88 @@ if (
   );
 
 
-  heroCard.addEventListener(
+  terminal.addEventListener(
     "mouseleave",
     () => {
 
-      heroCard.style.transform =
-        "";
+      terminal.style.transform = "";
 
     }
   );
 
 }
-```
+
+
+/* =========================================================
+   HEADER BACKGROUND ON SCROLL
+========================================================= */
+
+const header =
+  document.getElementById(
+    "header"
+  );
+
+
+function updateHeader() {
+
+  if (!header) {
+    return;
+  }
+
+
+  if (window.scrollY > 30) {
+
+    header.classList.add(
+      "scrolled"
+    );
+
+  } else {
+
+    header.classList.remove(
+      "scrolled"
+    );
+
+  }
+
+}
+
+
+window.addEventListener(
+  "scroll",
+  updateHeader,
+  {
+    passive: true
+  }
+);
+
+
+updateHeader();
+
+
+/* =========================================================
+   ESCAPE KEY CLOSES MOBILE MENU
+========================================================= */
+
+document.addEventListener(
+  "keydown",
+  (event) => {
+
+    if (
+      event.key === "Escape" &&
+      nav &&
+      menuButton
+    ) {
+
+      nav.classList.remove(
+        "open"
+      );
+
+      menuButton.setAttribute(
+        "aria-expanded",
+        "false"
+      );
+
+    }
+
+  }
+);
