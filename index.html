@@ -1,9 +1,6 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
   <meta charset="UTF-8">
 
   <meta
@@ -13,80 +10,44 @@
 
   <meta
     name="description"
-    content="Piyush Puru — B.Tech CSE student at VIT-AP University, full-stack developer, machine learning enthusiast and researcher."
+    content="Piyush Puru — B.Tech CSE student, Full-Stack Developer, Java Developer and Machine Learning enthusiast."
   >
 
-  <meta
-    name="keywords"
-    content="Piyush Puru, VIT AP, Full Stack Developer, MERN, Java, Machine Learning, Portfolio"
-  >
+  <meta name="theme-color" content="#070b12">
 
-  <meta name="theme-color" content="#08111f">
+  <title>Piyush Puru | Full-Stack Developer</title>
 
-  <title>
-    Piyush Puru | Full-Stack Developer
-  </title>
-
-  <!-- Fonts -->
-
-  <link
-    rel="preconnect"
-    href="https://fonts.googleapis.com"
-  >
-
-  <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
-  >
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
     rel="stylesheet"
   >
 
-  <link
-    rel="stylesheet"
-    href="style.css"
-  >
-
+  <!-- IMPORTANT: CSS file is in same folder -->
+  <link rel="stylesheet" href="./style.css">
 </head>
-
 
 <body>
 
-  <!-- =========================
-       BACKGROUND
-  ========================== -->
+  <!-- Background -->
+  <div class="grid-background"></div>
+  <div class="glow glow-1"></div>
+  <div class="glow glow-2"></div>
 
-  <div class="background-grid"></div>
+  <!-- ================= HEADER ================= -->
 
-  <div class="glow glow-one"></div>
-  <div class="glow glow-two"></div>
+  <header class="header" id="header">
 
+    <div class="container nav-container">
 
-  <!-- =========================
-       HEADER
-  ========================== -->
-
-  <header class="header">
-
-    <div class="container nav">
-
-      <a
-        href="#home"
-        class="brand"
-      >
-        <span class="brand-bracket">{</span>
-        PP
-        <span class="brand-bracket">}</span>
+      <a href="#home" class="logo">
+        <span>&lt;</span>PP<span>/&gt;</span>
       </a>
 
-
-      <nav
-        class="navigation"
-        id="navigation"
-      >
+      <nav class="nav" id="nav">
 
         <a href="#home">Home</a>
         <a href="#about">About</a>
@@ -97,23 +58,23 @@
 
       </nav>
 
-
-      <div class="nav-actions">
+      <div class="nav-buttons">
 
         <button
-          class="theme-btn"
-          id="themeBtn"
+          class="theme-button"
+          id="themeButton"
           aria-label="Toggle theme"
+          type="button"
         >
-          ☼
+          ☀
         </button>
 
-
         <button
-          class="menu-btn"
-          id="menuBtn"
-          aria-label="Toggle menu"
+          class="menu-button"
+          id="menuButton"
+          aria-label="Open navigation"
           aria-expanded="false"
+          type="button"
         >
           <span></span>
           <span></span>
@@ -127,84 +88,55 @@
   </header>
 
 
+  <!-- ================= MAIN ================= -->
+
   <main>
 
+    <!-- ================= HERO ================= -->
 
-    <!-- =========================
-         HERO
-    ========================== -->
+    <section class="hero" id="home">
 
-    <section
-      class="hero"
-      id="home"
-    >
-
-      <div class="container hero-layout">
-
+      <div class="container hero-container">
 
         <div class="hero-content reveal">
 
-          <div class="status">
-
-            <span class="status-dot"></span>
-
-            Available for opportunities
-
+          <div class="availability">
+            <span class="availability-dot"></span>
+            Open to opportunities
           </div>
 
-
-          <p class="hero-small">
-            HELLO, I'M
+          <p class="hero-label">
+            B.TECH CSE · VIT-AP UNIVERSITY
           </p>
-
 
           <h1>
-
             Piyush
-
             <span>Puru.</span>
-
           </h1>
 
-
-          <h2 class="typing-line">
-
-            <span id="typingText">
-              Full-Stack Developer
-            </span>
-
+          <div class="hero-role">
+            <span id="typingText">Full-Stack Developer</span>
             <span class="cursor">|</span>
-
-          </h2>
-
+          </div>
 
           <p class="hero-description">
-
-            Final-year B.Tech Computer Science & Engineering
-            student at VIT-AP University with a
-            <strong>9.13 CGPA</strong>.
-
-            I build full-stack applications, explore
-            machine learning and work on research-driven
+            Final-year Computer Science & Engineering student at
+            <strong>VIT-AP University</strong> with a
+            <strong>9.13 CGPA</strong>. I build full-stack applications,
+            explore machine learning, and work on research-driven
             software systems.
-
           </p>
 
+          <div class="hero-actions">
 
-          <div class="hero-buttons">
-
-            <a
-              href="#projects"
-              class="button button-primary"
-            >
-              Explore My Work
+            <a href="#projects" class="button primary-button">
+              View My Work
               <span>↗</span>
             </a>
 
-
             <a
-              href="PIYUSH_PURU_RESUME.pdf"
-              class="button button-secondary"
+              href="./PIYUSH_PURU_RESUME.pdf"
+              class="button secondary-button"
               download
             >
               Download Resume
@@ -213,13 +145,12 @@
 
           </div>
 
-
-          <div class="social-row">
+          <div class="hero-links">
 
             <a
               href="https://github.com/piyush5904"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
             >
               GitHub ↗
             </a>
@@ -227,7 +158,7 @@
             <a
               href="https://linkedin.com/in/piyush-puru-b284b6294"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
             >
               LinkedIn ↗
             </a>
@@ -241,141 +172,117 @@
         </div>
 
 
-        <!-- HERO CARD -->
+        <!-- Developer Terminal -->
 
-        <div class="hero-card reveal">
-
-          <div class="card-top">
-
-            <span>PIYUSH.PURU</span>
-
-            <span>2026</span>
-
-          </div>
-
+        <div class="terminal-wrapper reveal">
 
           <div class="terminal">
 
-            <div class="terminal-header">
+            <div class="terminal-top">
 
               <div class="terminal-dots">
-
                 <span></span>
                 <span></span>
                 <span></span>
-
               </div>
 
-              <span>developer.js</span>
+              <span class="terminal-title">
+                piyush.js
+              </span>
+
+              <span class="terminal-version">
+                v2026
+              </span>
 
             </div>
 
+            <div class="terminal-body">
 
-            <div class="code">
+              <div>
+                <span class="code-purple">const</span>
+                <span class="code-white"> developer </span>
+                <span class="code-white">=</span>
+                <span class="code-yellow"> {</span>
+              </div>
 
-              <p>
-                <span class="purple">const</span>
-                developer
-                <span class="white">=</span>
-                <span class="yellow">{</span>
-              </p>
-
-
-              <p class="indent">
-
-                name:
-                <span class="green">
+              <div class="code-indent">
+                <span class="code-blue">name:</span>
+                <span class="code-green">
                   "Piyush Puru"
                 </span>,
+              </div>
 
-              </p>
-
-
-              <p class="indent">
-
-                education:
-                <span class="green">
+              <div class="code-indent">
+                <span class="code-blue">degree:</span>
+                <span class="code-green">
                   "B.Tech CSE"
                 </span>,
+              </div>
 
-              </p>
+              <div class="code-indent">
+                <span class="code-blue">university:</span>
+                <span class="code-green">
+                  "VIT-AP"
+                </span>,
+              </div>
 
-
-              <p class="indent">
-
-                cgpa:
-                <span class="orange">
+              <div class="code-indent">
+                <span class="code-blue">cgpa:</span>
+                <span class="code-orange">
                   9.13
                 </span>,
+              </div>
 
-              </p>
-
-
-              <p class="indent">
-
-                stack:
-                <span class="green">
+              <div class="code-indent">
+                <span class="code-blue">stack:</span>
+                <span class="code-green">
                   "MERN"
                 </span>,
+              </div>
 
-              </p>
-
-
-              <p class="indent">
-
-                languages:
-                <span class="green">
+              <div class="code-indent">
+                <span class="code-blue">languages:</span>
+                <span class="code-green">
                   ["Java", "Python", "JS"]
                 </span>,
+              </div>
 
-              </p>
-
-
-              <p class="indent">
-
-                focus:
-                <span class="green">
+              <div class="code-indent">
+                <span class="code-blue">focus:</span>
+                <span class="code-green">
                   "AI + Full Stack"
                 </span>
+              </div>
 
-              </p>
-
-
-              <p>
-                <span class="yellow">}</span>;
-              </p>
+              <div>
+                <span class="code-yellow">}</span>;
+              </div>
 
             </div>
 
           </div>
 
 
-          <div class="mini-stats">
+          <div class="hero-stats">
 
-            <div>
-
+            <div class="hero-stat">
               <strong>9.13</strong>
-
               <span>CGPA</span>
-
             </div>
 
-
-            <div>
-
+            <div class="hero-stat">
               <strong>6</strong>
-
-              <span>Projects</span>
-
+              <span>PROJECTS</span>
             </div>
 
-
-            <div>
-
+            <div class="hero-stat">
               <strong>2</strong>
+              <span>RESEARCH PAPERS</span>
+            </div>
 
-              <span>Papers</span>
-
+            <div class="hero-stat">
+              <strong>823</strong>
+              <span>ANMC AIR</span>
             </div>
 
           </div>
@@ -385,89 +292,73 @@
       </div>
 
 
-      <div class="scroll-indicator">
-
-        <span>SCROLL TO EXPLORE</span>
-
+      <div class="scroll-hint">
+        <span>SCROLL</span>
         <div></div>
-
       </div>
 
     </section>
 
 
-    <!-- =========================
-         ABOUT
-    ========================== -->
+    <!-- ================= ABOUT ================= -->
 
-    <section
-      class="section"
-      id="about"
-    >
+    <section class="section" id="about">
 
       <div class="container">
 
-        <div class="section-label">
-          01 — ABOUT
+        <div class="section-number">
+          01 / ABOUT
         </div>
-
 
         <div class="about-grid">
 
+          <div class="section-heading reveal">
 
-          <div class="section-title reveal">
-
-            <p class="mini-label">
-              A LITTLE ABOUT ME
+            <p class="eyebrow">
+              WHO I AM
             </p>
 
             <h2>
-              Turning ideas into
-              <span>working software.</span>
+              Building with
+              <span>curiosity.</span>
             </h2>
 
           </div>
 
 
-          <div class="about-content reveal">
+          <div class="about-text reveal">
 
             <p>
-
-              I'm a final-year Computer Science &
-              Engineering student at
-              <strong>VIT-AP University</strong>,
-              graduating in 2027.
-
+              I'm a <strong>final-year B.Tech Computer Science
+              and Engineering student</strong> at VIT-AP University,
+              currently maintaining a <strong>9.13 CGPA</strong>.
             </p>
-
 
             <p>
-
-              My interests sit at the intersection of
-              <strong>full-stack development, machine
-              learning and intelligent systems</strong>.
-
-              I enjoy building products that combine
-              clean interfaces with practical backend
-              architecture.
-
+              My experience covers
+              <strong>Java, Python, JavaScript, MERN Stack,
+              Machine Learning and Full-stack Development</strong>.
+              I enjoy solving problems by combining strong
+              computer science fundamentals with practical software.
             </p>
-
 
             <p>
-
-              Beyond development, I have co-authored
-              two research papers and participated in
-              hackathons including Smart India Hackathon.
-
+              I've built projects through academic work and
+              hackathons, including a medical document RAG platform,
+              crop-yield prediction platform and MERN applications.
             </p>
 
+            <p>
+              Alongside development, I have
+              <strong>co-authored two research papers</strong>
+              in image compression and symptom-based classification.
+            </p>
 
-            <div class="about-facts">
+            <div class="about-info">
 
               <div>
                 <span>University</span>
-                <strong>VIT-AP</strong>
+                <strong>VIT-AP University</strong>
               </div>
 
               <div>
@@ -476,13 +367,13 @@
               </div>
 
               <div>
-                <span>CGPA</span>
-                <strong>9.13</strong>
+                <span>Graduation</span>
+                <strong>2027</strong>
               </div>
 
               <div>
-                <span>Graduation</span>
-                <strong>2027</strong>
+                <span>CGPA</span>
+                <strong>9.13</strong>
               </div>
 
             </div>
@@ -496,213 +387,216 @@
     </section>
 
 
-    <!-- =========================
-         SKILLS
-    ========================== -->
+    <!-- ================= SKILLS ================= -->
 
-    <section
-      class="section skills-section"
-      id="skills"
-    >
+    <section class="section skills-section" id="skills">
 
       <div class="container">
 
-        <div class="section-label">
-          02 — SKILLS
+        <div class="section-number">
+          02 / SKILLS
         </div>
-
 
         <div class="section-heading reveal">
 
-          <p class="mini-label">
-            TECHNOLOGY STACK
+          <p class="eyebrow">
+            TECHNOLOGY
           </p>
 
           <h2>
-            Tools I use to
-            <span>build.</span>
+            My technical
+            <span>toolkit.</span>
           </h2>
 
         </div>
 
 
-        <div class="skill-filters">
+        <div class="skill-filters reveal">
 
           <button
-            class="filter active"
+            class="filter-button active"
             data-filter="all"
+            type="button"
           >
-            All
+            ALL
           </button>
 
           <button
-            class="filter"
-            data-filter="language"
+            class="filter-button"
+            data-filter="languages"
+            type="button"
           >
-            Languages
+            LANGUAGES
           </button>
 
           <button
-            class="filter"
+            class="filter-button"
             data-filter="web"
+            type="button"
           >
-            Web
+            WEB
           </button>
 
           <button
-            class="filter"
+            class="filter-button"
             data-filter="database"
+            type="button"
           >
-            Databases
+            DATABASE
           </button>
 
           <button
-            class="filter"
+            class="filter-button"
             data-filter="core"
+            type="button"
           >
-            Core CS
+            CORE CS
           </button>
 
           <button
-            class="filter"
+            class="filter-button"
             data-filter="tools"
+            type="button"
           >
-            Tools
+            TOOLS
           </button>
 
         </div>
 
 
-        <div class="skills-grid reveal">
+        <div class="skills-grid">
 
 
-          <div
-            class="skill-card"
-            data-category="language"
+          <article
+            class="skill-card reveal"
+            data-category="languages"
           >
 
-            <span class="skill-number">01</span>
+            <div class="skill-card-top">
+              <span>01</span>
+              <span>LANG</span>
+            </div>
 
             <h3>Languages</h3>
 
-            <div class="skill-list">
-
+            <div class="skill-tags">
               <span>Java</span>
               <span>Python</span>
               <span>JavaScript</span>
               <span>SQL</span>
-
             </div>
 
-          </div>
+          </article>
 
 
-          <div
-            class="skill-card"
+          <article
+            class="skill-card reveal"
             data-category="web"
           >
 
-            <span class="skill-number">02</span>
+            <div class="skill-card-top">
+              <span>02</span>
+              <span>WEB</span>
+            </div>
 
             <h3>Web Development</h3>
 
-            <div class="skill-list">
-
+            <div class="skill-tags">
               <span>HTML</span>
               <span>CSS</span>
               <span>JavaScript</span>
               <span>MERN Stack</span>
-              <span>React</span>
-              <span>Node.js</span>
-              <span>Express</span>
-
             </div>
 
-          </div>
+          </article>
 
 
-          <div
-            class="skill-card"
+          <article
+            class="skill-card reveal"
             data-category="database"
           >
 
-            <span class="skill-number">03</span>
+            <div class="skill-card-top">
+              <span>03</span>
+              <span>DATA</span>
+            </div>
 
             <h3>Databases</h3>
 
-            <div class="skill-list">
-
+            <div class="skill-tags">
               <span>MySQL</span>
               <span>MongoDB</span>
-
             </div>
 
-          </div>
+          </article>
 
 
-          <div
-            class="skill-card"
+          <article
+            class="skill-card reveal"
             data-category="tools"
           >
 
-            <span class="skill-number">04</span>
+            <div class="skill-card-top">
+              <span>04</span>
+              <span>TOOLS</span>
+            </div>
 
             <h3>Developer Tools</h3>
 
-            <div class="skill-list">
-
+            <div class="skill-tags">
               <span>Git</span>
               <span>GitHub</span>
               <span>VS Code</span>
-
             </div>
 
-          </div>
+          </article>
 
 
-          <div
-            class="skill-card"
+          <article
+            class="skill-card reveal"
             data-category="core"
           >
 
-            <span class="skill-number">05</span>
+            <div class="skill-card-top">
+              <span>05</span>
+              <span>CORE</span>
+            </div>
 
-            <h3>Core Computer Science</h3>
+            <h3>Core CS</h3>
 
-            <div class="skill-list">
-
+            <div class="skill-tags">
               <span>Data Structures</span>
               <span>OOPs</span>
               <span>DBMS</span>
               <span>Operating Systems</span>
               <span>Computer Networks</span>
-
             </div>
 
-          </div>
+          </article>
 
 
-          <div
-            class="skill-card"
+          <article
+            class="skill-card reveal"
             data-category="tools"
           >
 
-            <span class="skill-number">06</span>
+            <div class="skill-card-top">
+              <span>06</span>
+              <span>SOFT</span>
+            </div>
 
-            <h3>Professional Skills</h3>
+            <h3>Soft Skills</h3>
 
-            <div class="skill-list">
-
+            <div class="skill-tags">
               <span>Communication</span>
               <span>Leadership</span>
               <span>Teamwork</span>
               <span>Adaptability</span>
               <span>Critical Thinking</span>
               <span>Logical Reasoning</span>
-
             </div>
 
-          </div>
+          </article>
 
         </div>
 
@@ -711,25 +605,19 @@
     </section>
 
 
-    <!-- =========================
-         PROJECTS
-    ========================== -->
+    <!-- ================= PROJECTS ================= -->
 
-    <section
-      class="section"
-      id="projects"
-    >
+    <section class="section" id="projects">
 
       <div class="container">
 
-        <div class="section-label">
-          03 — PROJECTS
+        <div class="section-number">
+          03 / PROJECTS
         </div>
-
 
         <div class="section-heading reveal">
 
-          <p class="mini-label">
+          <p class="eyebrow">
             SELECTED WORK
           </p>
 
@@ -744,22 +632,17 @@
         <div class="projects-grid">
 
 
-          <!-- MEDRAG -->
+          <!-- 01 MEDRAG -->
 
           <article class="project-card featured reveal">
 
-            <div class="project-top">
-
-              <span class="project-index">
-                01
-              </span>
-
-              <span class="project-date">
-                AUG 2026
-              </span>
-
+            <div class="project-number">
+              01
             </div>
 
+            <div class="project-date">
+              AUG 2026
+            </div>
 
             <div class="project-content">
 
@@ -767,70 +650,62 @@
                 ✦
               </div>
 
+              <p class="project-category">
+                AI / FULL-STACK
+              </p>
+
               <h3>
                 MedRAG
               </h3>
 
-              <p class="project-subtitle">
+              <h4>
                 Medical Document Intelligence
+              </h4>
+
+              <p>
+                Built a medical document question-answering
+                platform using Retrieval-Augmented Generation
+                (RAG) to provide grounded answers from uploaded
+                PDF documents.
               </p>
 
-
-              <p class="project-description">
-
-                Medical document question-answering
-                platform using Retrieval-Augmented
-                Generation to provide grounded answers
-                from uploaded PDF documents.
-
+              <p>
+                Developed the full-stack pipeline using React,
+                Spring Boot, LangChain4j, Ollama and Qdrant for
+                document processing, embeddings, vector retrieval
+                and context-aware answer generation.
               </p>
 
-
-              <div class="tech-tags">
-
+              <div class="project-tags">
                 <span>React</span>
                 <span>Spring Boot</span>
                 <span>LangChain4j</span>
                 <span>Ollama</span>
                 <span>Qdrant</span>
                 <span>RAG</span>
-
               </div>
 
             </div>
 
-
-            <div class="project-footer">
-
-              <span>
-                FULL-STACK + AI
-              </span>
-
-              <span class="project-arrow">
-                ↗
-              </span>
-
+            <div class="project-bottom">
+              <span>MEDICAL AI</span>
+              <span>↗</span>
             </div>
 
           </article>
 
 
-          <!-- SIH -->
+          <!-- 02 SIH -->
 
           <article class="project-card reveal">
 
-            <div class="project-top">
-
-              <span class="project-index">
-                02
-              </span>
-
-              <span class="project-date">
-                NOV 2025
-              </span>
-
+            <div class="project-number">
+              02
             </div>
 
+            <div class="project-date">
+              NOV 2025
+            </div>
 
             <div class="project-content">
 
@@ -838,67 +713,53 @@
                 ◈
               </div>
 
+              <p class="project-category">
+                HACKATHON / ML
+              </p>
+
               <h3>
                 Crop Yield Prediction
               </h3>
 
-              <p class="project-subtitle">
+              <h4>
                 Smart India Hackathon 2025
+              </h4>
+
+              <p>
+                Built a MERN-based crop yield prediction platform
+                integrating Weather and Language Translation APIs
+                with machine learning models trained on 10K+
+                records available online.
               </p>
 
-
-              <p class="project-description">
-
-                MERN-based crop-yield prediction platform
-                integrating Weather and Language Translation
-                APIs with ML models trained on 10K+ records.
-
-              </p>
-
-
-              <div class="tech-tags">
-
+              <div class="project-tags">
                 <span>MERN</span>
-                <span>ML</span>
+                <span>Machine Learning</span>
                 <span>Weather API</span>
                 <span>Translation API</span>
-
               </div>
 
             </div>
 
-
-            <div class="project-footer">
-
-              <span>
-                HACKATHON
-              </span>
-
-              <span class="project-arrow">
-                ↗
-              </span>
-
+            <div class="project-bottom">
+              <span>SIH 2025</span>
+              <span>↗</span>
             </div>
 
           </article>
 
 
-          <!-- RECIPE -->
+          <!-- 03 RECIPE -->
 
           <article class="project-card reveal">
 
-            <div class="project-top">
-
-              <span class="project-index">
-                03
-              </span>
-
-              <span class="project-date">
-                JUL 2025
-              </span>
-
+            <div class="project-number">
+              03
             </div>
 
+            <div class="project-date">
+              JUL 2025
+            </div>
 
             <div class="project-content">
 
@@ -906,67 +767,52 @@
                 ◉
               </div>
 
+              <p class="project-category">
+                MERN / WEB
+              </p>
+
               <h3>
                 Recipe Maker
               </h3>
 
-              <p class="project-subtitle">
+              <h4>
                 MERN Recipe Platform
-              </p>
+              </h4>
 
-
-              <p class="project-description">
-
-                Recipe platform with advanced search,
-                category filtering and MongoDB-backed
+              <p>
+                Developed a MERN recipe platform with advanced
+                search, category filtering and MongoDB-backed
                 recipe management supporting 30+ recipes.
-
               </p>
 
-
-              <div class="tech-tags">
-
+              <div class="project-tags">
                 <span>MongoDB</span>
                 <span>Express</span>
                 <span>React</span>
                 <span>Node.js</span>
-
               </div>
 
             </div>
 
-
-            <div class="project-footer">
-
-              <span>
-                WEB DEVELOPMENT
-              </span>
-
-              <span class="project-arrow">
-                ↗
-              </span>
-
+            <div class="project-bottom">
+              <span>WEB APP</span>
+              <span>↗</span>
             </div>
 
           </article>
 
 
-          <!-- PORTFOLIO -->
+          <!-- 04 PORTFOLIO -->
 
           <article class="project-card reveal">
 
-            <div class="project-top">
-
-              <span class="project-index">
-                04
-              </span>
-
-              <span class="project-date">
-                FEB 2025
-              </span>
-
+            <div class="project-number">
+              04
             </div>
 
+            <div class="project-date">
+              FEB 2025
+            </div>
 
             <div class="project-content">
 
@@ -974,67 +820,52 @@
                 ◇
               </div>
 
+              <p class="project-category">
+                FRONT-END
+              </p>
+
               <h3>
                 Portfolio Website
               </h3>
 
-              <p class="project-subtitle">
+              <h4>
                 Personal Developer Portfolio
+              </h4>
+
+              <p>
+                Designed a portfolio showcasing projects,
+                certifications and achievements and deployed
+                it on GitHub.
               </p>
 
-
-              <p class="project-description">
-
-                Personal portfolio showcasing projects,
-                certifications and achievements,
-                deployed through GitHub.
-
-              </p>
-
-
-              <div class="tech-tags">
-
+              <div class="project-tags">
                 <span>HTML</span>
                 <span>CSS</span>
                 <span>JavaScript</span>
                 <span>GitHub</span>
-
               </div>
 
             </div>
 
-
-            <div class="project-footer">
-
-              <span>
-                PERSONAL PROJECT
-              </span>
-
-              <span class="project-arrow">
-                ↗
-              </span>
-
+            <div class="project-bottom">
+              <span>PERSONAL</span>
+              <span>↗</span>
             </div>
 
           </article>
 
 
-          <!-- JOB X PERT -->
+          <!-- 05 JOB-X-PERT -->
 
           <article class="project-card reveal">
 
-            <div class="project-top">
-
-              <span class="project-index">
-                05
-              </span>
-
-              <span class="project-date">
-                APR 2024
-              </span>
-
+            <div class="project-number">
+              05
             </div>
 
+            <div class="project-date">
+              APR 2024
+            </div>
 
             <div class="project-content">
 
@@ -1042,64 +873,49 @@
                 +
               </div>
 
+              <p class="project-category">
+                HACKATHON
+              </p>
+
               <h3>
                 JOB-X-PERT
               </h3>
 
-              <p class="project-subtitle">
+              <h4>
                 Job Discovery Platform
+              </h4>
+
+              <p>
+                Created a job discovery platform during the
+                FRAMEX Hackathon 2023.
               </p>
 
-
-              <p class="project-description">
-
-                Created a job discovery platform during
-                the FRAMEX Hackathon 2023.
-
-              </p>
-
-
-              <div class="tech-tags">
-
+              <div class="project-tags">
                 <span>Hackathon</span>
-                <span>Full-stack</span>
-
+                <span>Job Discovery</span>
               </div>
 
             </div>
 
-
-            <div class="project-footer">
-
-              <span>
-                HACKATHON
-              </span>
-
-              <span class="project-arrow">
-                ↗
-              </span>
-
+            <div class="project-bottom">
+              <span>FRAMEX</span>
+              <span>↗</span>
             </div>
 
           </article>
 
 
-          <!-- BEYOND CODE -->
+          <!-- 06 BEYOND CODE -->
 
           <article class="project-card reveal">
 
-            <div class="project-top">
-
-              <span class="project-index">
-                06
-              </span>
-
-              <span class="project-date">
-                NOV 2024
-              </span>
-
+            <div class="project-number">
+              06
             </div>
 
+            <div class="project-date">
+              NOV 2024
+            </div>
 
             <div class="project-content">
 
@@ -1107,44 +923,35 @@
                 //
               </div>
 
+              <p class="project-category">
+                JAVA / OOP
+              </p>
+
               <h3>
                 Beyond the Code
               </h3>
 
-              <p class="project-subtitle">
+              <h4>
                 Java Applications
+              </h4>
+
+              <p>
+                Developed Java-based To-Do List and Number
+                Guessing Game applications demonstrating
+                object-oriented programming, user interaction
+                and core Java concepts.
               </p>
 
-
-              <p class="project-description">
-
-                Java-based To-Do List and Number Guessing
-                Game applications demonstrating OOP,
-                user interaction and core Java concepts.
-
-              </p>
-
-
-              <div class="tech-tags">
-
+              <div class="project-tags">
                 <span>Java</span>
                 <span>OOP</span>
-
               </div>
 
             </div>
 
-
-            <div class="project-footer">
-
-              <span>
-                JAVA
-              </span>
-
-              <span class="project-arrow">
-                ↗
-              </span>
-
+            <div class="project-bottom">
+              <span>JAVA</span>
+              <span>↗</span>
             </div>
 
           </article>
@@ -1156,9 +963,7 @@
     </section>
 
 
-    <!-- =========================
-         GITHUB
-    ========================== -->
+    <!-- ================= GITHUB ================= -->
 
     <section class="github-section">
 
@@ -1166,21 +971,30 @@
 
         <div class="github-card reveal">
 
-          <div>
+          <div class="github-text">
 
-            <p class="mini-label">
+            <p class="eyebrow">
               OPEN SOURCE
             </p>
 
             <h2>
-              Find me on
+              Code lives on
               <span>GitHub.</span>
             </h2>
 
             <p>
-              Explore my repositories, experiments,
-              projects and development work.
+              Explore my repositories, projects and
+              experiments.
             </p>
+
+            <a
+              href="https://github.com/piyush5904"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="button primary-button"
+            >
+              Visit GitHub ↗
+            </a>
 
           </div>
 
@@ -1188,48 +1002,21 @@
           <div class="github-stats">
 
             <div>
-
-              <strong id="repoCount">
-                —
-              </strong>
-
-              <span>Repositories</span>
-
+              <strong id="repoCount">—</strong>
+              <span>PUBLIC REPOS</span>
             </div>
 
-
             <div>
-
-              <strong id="followerCount">
-                —
-              </strong>
-
-              <span>Followers</span>
-
+              <strong id="followerCount">—</strong>
+              <span>FOLLOWERS</span>
             </div>
 
-
             <div>
-
-              <strong id="followingCount">
-                —
-              </strong>
-
-              <span>Following</span>
-
+              <strong id="followingCount">—</strong>
+              <span>FOLLOWING</span>
             </div>
 
           </div>
-
-
-          <a
-            href="https://github.com/piyush5904"
-            target="_blank"
-            rel="noopener"
-            class="button button-primary"
-          >
-            Visit GitHub ↗
-          </a>
 
         </div>
 
@@ -1238,25 +1025,19 @@
     </section>
 
 
-    <!-- =========================
-         RESEARCH
-    ========================== -->
+    <!-- ================= RESEARCH ================= -->
 
-    <section
-      class="section"
-      id="research"
-    >
+    <section class="section" id="research">
 
       <div class="container">
 
-        <div class="section-label">
-          04 — RESEARCH
+        <div class="section-number">
+          04 / RESEARCH
         </div>
-
 
         <div class="section-heading reveal">
 
-          <p class="mini-label">
+          <p class="eyebrow">
             ACADEMIC WORK
           </p>
 
@@ -1277,7 +1058,7 @@
               01
             </span>
 
-            <p class="research-type">
+            <p class="research-label">
               RESEARCH PAPER
             </p>
 
@@ -1288,8 +1069,8 @@
             </h3>
 
             <p>
-              Led and co-authored research paper
-              exploring image compression techniques.
+              Led and co-authored research paper on
+              image compression techniques.
             </p>
 
           </article>
@@ -1301,7 +1082,7 @@
               02
             </span>
 
-            <p class="research-type">
+            <p class="research-label">
               RESEARCH PAPER
             </p>
 
@@ -1311,7 +1092,7 @@
             </h3>
 
             <p>
-              Co-authored research paper focused on
+              Co-authored research paper on
               symptom-based classification and diagnosis.
             </p>
 
@@ -1324,23 +1105,20 @@
     </section>
 
 
-    <!-- =========================
-         EDUCATION + CERTIFICATIONS
-    ========================== -->
+    <!-- ================= EDUCATION ================= -->
 
-    <section class="section credentials-section">
+    <section class="section education-section">
 
       <div class="container">
 
-        <div class="credentials-grid">
+        <div class="education-grid">
 
 
           <div>
 
-            <div class="section-label">
-              05 — EDUCATION
+            <div class="section-number">
+              05 / EDUCATION
             </div>
-
 
             <div class="timeline reveal">
 
@@ -1377,7 +1155,7 @@
                 </h3>
 
                 <p>
-                  Grade II — XII
+                  Grade II — XII · Graduated
                 </p>
 
               </div>
@@ -1387,17 +1165,18 @@
           </div>
 
 
+          <!-- CERTIFICATIONS -->
+
           <div id="certifications">
 
-            <div class="section-label">
-              06 — CREDENTIALS
+            <div class="section-number">
+              06 / CREDENTIALS
             </div>
 
+            <div class="certifications-list reveal">
 
-            <div class="cert-list reveal">
 
-
-              <div class="cert">
+              <div class="certification">
 
                 <span>01</span>
 
@@ -1408,7 +1187,8 @@
                   </h3>
 
                   <p>
-                    ID: 330463030AAI26OFA
+                    Certificate ID:
+                    330463030AAI26OFA
                   </p>
 
                 </div>
@@ -1416,7 +1196,7 @@
               </div>
 
 
-              <div class="cert">
+              <div class="certification">
 
                 <span>02</span>
 
@@ -1427,7 +1207,8 @@
                   </h3>
 
                   <p>
-                    ID: 9DVMQT2Z
+                    Certificate ID:
+                    9DVMQT2Z
                   </p>
 
                 </div>
@@ -1435,18 +1216,18 @@
               </div>
 
 
-              <div class="cert">
+              <div class="certification">
 
                 <span>03</span>
 
                 <div>
 
                   <h3>
-                    AWS Academy Certifications
+                    Amazon Web Services Academy
                   </h3>
 
                   <p>
-                    Amazon Web Services Academy
+                    AWS Certifications
                   </p>
 
                 </div>
@@ -1454,7 +1235,7 @@
               </div>
 
 
-              <div class="cert">
+              <div class="certification">
 
                 <span>04</span>
 
@@ -1465,7 +1246,8 @@
                   </h3>
 
                   <p>
-                    ID: 279243-33132225-1016
+                    Certificate ID:
+                    279243-33132225-1016
                   </p>
 
                 </div>
@@ -1473,7 +1255,7 @@
               </div>
 
 
-              <div class="cert">
+              <div class="certification">
 
                 <span>05</span>
 
@@ -1491,7 +1273,6 @@
 
               </div>
 
-
             </div>
 
           </div>
@@ -1503,51 +1284,121 @@
     </section>
 
 
-    <!-- =========================
-         CONTACT
-    ========================== -->
+    <!-- ================= LANGUAGES / HOBBIES ================= -->
 
-    <section
-      class="contact-section"
-      id="contact"
-    >
+    <section class="section extras-section">
 
       <div class="container">
 
-        <div class="contact-card reveal">
+        <div class="extras-grid">
 
-          <p class="mini-label">
-            07 — CONTACT
+
+          <div class="extra-card reveal">
+
+            <p class="eyebrow">
+              LANGUAGES
+            </p>
+
+            <h3>
+              English
+            </h3>
+
+            <h3>
+              Hindi
+            </h3>
+
+            <h3>
+              Spanish
+              <small>(Basic)</small>
+            </h3>
+
+          </div>
+
+
+          <div class="extra-card reveal">
+
+            <p class="eyebrow">
+              BEYOND CODE
+            </p>
+
+            <h3>
+              Playing Sports
+            </h3>
+
+            <h3>
+              Reading Books
+            </h3>
+
+            <h3>
+              Writing
+            </h3>
+
+          </div>
+
+
+          <div class="extra-card reveal">
+
+            <p class="eyebrow">
+              MINDSET
+            </p>
+
+            <h3>
+              Leadership
+            </h3>
+
+            <h3>
+              Teamwork
+            </h3>
+
+            <h3>
+              Critical Thinking
+            </h3>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= CONTACT ================= -->
+
+    <section class="contact-section" id="contact">
+
+      <div class="container">
+
+        <div class="contact-content reveal">
+
+          <p class="eyebrow">
+            07 / CONTACT
           </p>
 
           <h2>
-            Let's build the
-            <span>next thing.</span>
+            Let's build something
+            <span>great.</span>
           </h2>
 
           <p class="contact-description">
-
-            Whether it's a software project,
-            hackathon idea, research collaboration
-            or internship opportunity —
-            I'd love to connect.
-
+            Open to internships, collaborations,
+            hackathons, research and software development
+            opportunities.
           </p>
 
 
           <div class="contact-buttons">
 
             <a
-              class="button button-primary"
               href="mailto:piyushpuru123@gmail.com"
+              class="button primary-button"
             >
               piyushpuru123@gmail.com ↗
             </a>
 
-
             <a
-              class="button button-secondary"
               href="tel:+917042911848"
+              class="button secondary-button"
             >
               +91 7042911848
             </a>
@@ -1555,12 +1406,12 @@
           </div>
 
 
-          <div class="contact-links">
+          <div class="contact-socials">
 
             <a
               href="https://github.com/piyush5904"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
             >
               GitHub
             </a>
@@ -1568,13 +1419,13 @@
             <a
               href="https://linkedin.com/in/piyush-puru-b284b6294"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
             >
               LinkedIn
             </a>
 
             <a
-              href="PIYUSH_PURU_RESUME.pdf"
+              href="./PIYUSH_PURU_RESUME.pdf"
               download
             >
               Resume
@@ -1591,13 +1442,11 @@
   </main>
 
 
-  <!-- =========================
-       FOOTER
-  ========================== -->
+  <!-- ================= FOOTER ================= -->
 
   <footer>
 
-    <div class="container footer-inner">
+    <div class="container footer-content">
 
       <span>
         © <span id="year"></span> Piyush Puru
@@ -1612,9 +1461,8 @@
   </footer>
 
 
-  <script src="script.js"></script>
+  <!-- IMPORTANT: JS file is in same folder -->
+  <script src="./script.js"></script>
 
 </body>
-
 </html>
-```
