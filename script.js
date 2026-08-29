@@ -128,10 +128,10 @@ const openPdfModal = (title, pdfUrl) => {
 
   pdfModalTitle.textContent = title;
 
-  // For direct PDF URLs
-  const previewUrl = pdfUrl.includes('#')
-    ? pdfUrl
-    : `${pdfUrl}#toolbar=0&navpanes=0&scrollbar=1`;
+  // Route through Google's document viewer — raw GitHub PDF links block
+  // inline iframe rendering (they're served with a download header), so
+  // loading the raw URL directly into an iframe shows a blank box.
+  const previewUrl = `https://docs.google.com/viewer?url=${encodeURIComponent(pdfUrl)}&embedded=true`;
 
   pdfFrame.src = previewUrl;
   pdfOpenNewTab.href = pdfUrl;
