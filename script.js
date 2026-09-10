@@ -121,17 +121,22 @@ const viewWritingBtns = document.querySelectorAll('.view-writing-btn');
 const openPdfModal = (title, pdfUrl) => {
   if (!pdfModal || !pdfFrame || !pdfModalTitle || !pdfOpenNewTab) return;
 
-  if (!pdfUrl || pdfUrl.includes('YOUR_PUBLIC_') || pdfUrl.includes('YOUR-REPO-NAME')) {
+  if (!pdfUrl || pdfUrl.includes('PASTE_YOUR') || pdfUrl.includes('YOUR-REPO-NAME')) {
     alert('Please add a valid public PDF URL in index.html before using the View button.');
     return;
   }
 
   pdfModalTitle.textContent = title;
 
-  // Route through Google's document viewer — raw GitHub PDF links block
-  // inline iframe rendering (they're served with a download header), so
-  // loading the raw URL directly into an iframe shows a blank box.
-  const previewUrl = `https://docs.google.com/viewer?url=${encodeURIComponent(pdfUrl)}&embedded=true`;
+  // Google Drive share links need converting to their embeddable "preview"
+  // form. Any other link (e.g. raw GitHub PDFs) gets routed through
+  // Google's document viewer instead, since those block inline iframes.
+  const driveMatch = pdfUrl.match(/drive\.google\.com.*\/d\/([a-zA-Z0-9_-]+)/) ||
+                      pdfUrl.match(/drive\.google\.com.*[?&]id=([a-zA-Z0-9_-]+)/);
+
+  const previewUrl = driveMatch
+    ? `https://drive.google.com/file/d/${driveMatch[1]}/preview`
+    : `https://docs.google.com/viewer?url=${encodeURIComponent(pdfUrl)}&embedded=true`;
 
   pdfFrame.src = previewUrl;
   pdfOpenNewTab.href = pdfUrl;
