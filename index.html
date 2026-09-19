@@ -8,7 +8,7 @@
     name="description"
     content="Piyush Puru — B.Tech CSE student at VIT-AP University. Full-stack developer, machine learning practitioner, researcher, and writer."
   />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=3" />
 </head>
 <body>
   <header>
@@ -585,19 +585,19 @@
             <p class="contact-form-note">Or send a message — this opens your email app with everything filled in.</p>
 
             <div class="form-row">
-              <div class="form-field">
-                <label for="cfName">Your name</label>
-                <input type="text" id="cfName" name="name" required />
+              <div class="form-field" style="display:block; width:100%;">
+                <label for="cfName" style="display:block; width:100%; margin-bottom:8px;">Your name</label>
+                <input type="text" id="cfName" name="name" required style="display:block; width:100%; box-sizing:border-box;" />
               </div>
-              <div class="form-field">
-                <label for="cfEmail">Your email</label>
-                <input type="email" id="cfEmail" name="email" required />
+              <div class="form-field" style="display:block; width:100%;">
+                <label for="cfEmail" style="display:block; width:100%; margin-bottom:8px;">Your email</label>
+                <input type="email" id="cfEmail" name="email" required style="display:block; width:100%; box-sizing:border-box;" />
               </div>
             </div>
 
-            <div class="form-field">
-              <label for="cfSubject">What's it about?</label>
-              <select id="cfSubject" name="subject">
+            <div class="form-field" style="display:block; width:100%;">
+              <label for="cfSubject" style="display:block; width:100%; margin-bottom:8px;">What's it about?</label>
+              <select id="cfSubject" name="subject" style="display:block; width:100%; box-sizing:border-box;">
                 <option value="Internship / Opportunity">Internship / Opportunity</option>
                 <option value="Collaboration">Collaboration</option>
                 <option value="Feedback on my Writing">Feedback on my Writing</option>
@@ -605,9 +605,9 @@
               </select>
             </div>
 
-            <div class="form-field">
-              <label for="cfMessage">Message</label>
-              <textarea id="cfMessage" name="message" rows="4" required></textarea>
+            <div class="form-field" style="display:block; width:100%;">
+              <label for="cfMessage" style="display:block; width:100%; margin-bottom:8px;">Message</label>
+              <textarea id="cfMessage" name="message" rows="4" required style="display:block; width:100%; box-sizing:border-box;"></textarea>
             </div>
 
             <button type="submit" class="btn btn-primary">Send Message →</button>
@@ -644,6 +644,6 @@
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=3"></script>
 </body>
 </html>
