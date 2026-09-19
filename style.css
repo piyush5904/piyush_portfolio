@@ -1,20 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
 
 :root {
-  --bg-deep: #081826;
-  --bg: #0e2a47;
-  --bg-panel: #0c2138;
-  --line: rgba(159, 202, 230, 0.18);
-  --line-strong: rgba(159, 202, 230, 0.38);
-  --ink: #eaf2f8;
-  --muted: #8fafc7;
-  --accent: #ff8a3d;
-  --accent-soft: rgba(255, 138, 61, 0.12);
-  --cyan: #6fe7dd;
-  --cyan-soft: rgba(111, 231, 221, 0.14);
+  --bg-deep: #0a0716;
+  --bg: #150c2e;
+  --bg-panel: #130a28;
+  --line: rgba(167, 139, 250, 0.18);
+  --line-strong: rgba(167, 139, 250, 0.4);
+  --ink: #f5f0ff;
+  --muted: #a89bc9;
+  --accent: #a78bfa;
+  --accent-soft: rgba(167, 139, 250, 0.14);
+  --cyan: #fbbf24;
+  --cyan-soft: rgba(251, 191, 36, 0.14);
   --radius: 2px;
   --sheet-max: 1120px;
-  --shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
+  --shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
 
   --font-display: 'Space Grotesk', sans-serif;
   --font-body: 'IBM Plex Sans', sans-serif;
@@ -874,13 +874,13 @@ header {
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  gap: 20px;
 }
 
 .form-field {
   display: block;
   width: 100%;
-  margin-bottom: 18px;
+  margin-bottom: 22px;
 }
 
 .form-field label {
