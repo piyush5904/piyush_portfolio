@@ -55,8 +55,8 @@ window.addEventListener('scroll', () => {
   if (!header) return;
   header.style.borderBottomColor =
     window.scrollY > 20
-      ? 'rgba(159, 202, 230, 0.38)'
-      : 'rgba(159, 202, 230, 0.18)';
+      ? 'rgba(167, 139, 250, 0.4)'
+      : 'rgba(167, 139, 250, 0.18)';
 });
 
 // ===== Footer year =====
