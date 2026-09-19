@@ -176,3 +176,26 @@ document.addEventListener('keydown', (e) => {
     closePdfModal();
   }
 });
+
+// ===== Contact form → pre-filled mailto =====
+const contactForm = document.getElementById('contactForm');
+
+if (contactForm) {
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById('cfName').value.trim();
+    const email = document.getElementById('cfEmail').value.trim();
+    const subject = document.getElementById('cfSubject').value;
+    const message = document.getElementById('cfMessage').value.trim();
+
+    const mailSubject = `Portfolio message: ${subject}`;
+    const mailBody =
+      `Name: ${name}\nEmail: ${email}\n\n${message}`;
+
+    const mailtoLink =
+      `mailto:piyushpuru123@gmail.com?subject=${encodeURIComponent(mailSubject)}&body=${encodeURIComponent(mailBody)}`;
+
+    window.location.href = mailtoLink;
+  });
+}
