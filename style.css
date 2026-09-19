@@ -32,6 +32,7 @@ html {
 }
 
 body {
+  position: relative;
   background:
     linear-gradient(var(--bg-deep), var(--bg-deep)),
     repeating-linear-gradient(0deg, var(--line) 0px, var(--line) 1px, transparent 1px, transparent 32px),
@@ -42,6 +43,41 @@ body {
   line-height: 1.6;
   font-size: 16px;
   overflow-x: hidden;
+}
+
+body::before,
+body::after {
+  content: '';
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(120px);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.16;
+}
+
+body::before {
+  top: -120px;
+  left: -100px;
+  width: 480px;
+  height: 480px;
+  background: var(--accent);
+}
+
+body::after {
+  top: 30vh;
+  right: -140px;
+  width: 520px;
+  height: 520px;
+  background: var(--cyan);
+  opacity: 0.12;
+}
+
+header,
+main,
+footer {
+  position: relative;
+  z-index: 1;
 }
 
 body.modal-open {
@@ -279,6 +315,7 @@ header {
 
 .hero h1 .accent {
   color: var(--accent);
+  text-shadow: 0 0 24px rgba(255, 138, 61, 0.35);
 }
 
 .role {
@@ -367,6 +404,7 @@ header {
   color: var(--bg-deep);
   border-color: var(--accent);
   font-weight: 600;
+  box-shadow: 0 4px 16px rgba(255, 138, 61, 0.2);
 }
 
 .btn-primary:hover {
@@ -411,6 +449,16 @@ header {
 
 .schematic {
   padding: 20px;
+  position: relative;
+}
+
+.schematic::before {
+  content: '';
+  position: absolute;
+  inset: -30px;
+  background: radial-gradient(circle, rgba(255, 138, 61, 0.14), transparent 70%);
+  z-index: -1;
+  pointer-events: none;
 }
 
 .schematic svg {
@@ -481,6 +529,19 @@ header {
   font-family: var(--font-display);
   font-size: clamp(1.7rem, 3vw, 2.3rem);
   font-weight: 600;
+  position: relative;
+  padding-bottom: 14px;
+}
+
+.section-head h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 56px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--cyan));
+  border-radius: 2px;
 }
 
 .section-num {
@@ -534,6 +595,7 @@ header {
   gap: 1px;
   background: var(--line-strong);
   border: 1px solid var(--line-strong);
+  box-shadow: var(--shadow);
 }
 
 .skill-cell {
@@ -581,6 +643,7 @@ header {
   gap: 1px;
   background: var(--line-strong);
   border: 1px solid var(--line-strong);
+  box-shadow: var(--shadow);
 }
 
 .project-card {
@@ -815,11 +878,14 @@ header {
 }
 
 .form-field {
+  display: block;
+  width: 100%;
   margin-bottom: 18px;
 }
 
 .form-field label {
   display: block;
+  width: 100%;
   font-family: var(--font-mono);
   font-size: 0.7rem;
   letter-spacing: 0.06em;
